@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปรียบเทียบอุปกรณ์อิเล็กทรอนิกส์และเครื่องใช้ไฟฟ้าที่ดีที่สุด | GALAXY Store</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Premium Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">GALAXY <span class="logo-accent">Store</span></div>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active">หน้าแรก</a>
+                <a href="#compare" class="nav-link">เปรียบเทียบสินค้า</a>
+                <a href="#showcase-3d-sec" class="nav-link">หมุนชมสินค้า 3D</a>
+                <a href="#zoom-sec" class="nav-link">กล้องซูม 100x</a>
+                <a href="#privacy-sec" class="nav-link">Privacy Display</a>
+                <a href="#faq" class="nav-link">คำถามพบบ่อย</a>
+            </nav>
+            <button class="btn-buy-now" onclick="openBuyModal('galaxy-s26-ultra')">ช้อปเลย</button>
+        </div>
+    </header>
+
+    <!-- Sub-navigation (Sticky compare bar) -->
+    <div class="sticky-bar">
+        <div class="sticky-container">
+            <div class="sticky-title">เปรียบเทียบอุปกรณ์อิเล็กทรอนิกส์</div>
+            <div class="sticky-actions">
+                <a href="#compare" class="sticky-link">ตารางสเปก</a>
+                <a href="#showcase-3d-sec" class="sticky-link">หมุนสินค้า 3D</a>
+                <a href="#zoom-sec" class="sticky-link">กล้องซูม</a>
+                <a href="#privacy-sec" class="sticky-link">ระบบหน้าจอส่วนตัว</a>
+                <button class="btn-buy-now-sm" onclick="openBuyModal('galaxy-s26-ultra')">ซื้อทันที</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <div class="badge">ELECTRONICS & APPLIANCES ECOSYSTEM</div>
+            <h1 class="hero-title">GALAXY Innovation</h1>
+            <p class="hero-subtitle">ที่สุดของนวัตกรรมแล็ปท็อป แท็บเล็ต สมาร์ตโฟน และเครื่องใช้ไฟฟ้าอัจฉริยะที่เชื่อมต่อชีวิตของคุณเข้าด้วยกัน</p>
+            <div class="hero-ctas">
+                <a href="#compare" class="btn-primary">เปรียบเทียบสเปกเลย <i data-lucide="arrow-right"></i></a>
+                <a href="#showcase-3d-sec" class="btn-secondary">ลองหมุนสินค้า 3D</a>
+            </div>
+        </div>
+        <div class="hero-image-showcase">
+            <div class="showcase-card ultra">
+                <div class="card-glow"></div>
+                <img src="images/galaxy_book5.jpg" alt="Galaxy Book5 Ultra" class="phone-showcase-img" id="hero-showcase-img">
+                <span class="showcase-label" id="hero-showcase-label">Galaxy Book5 Ultra</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Comparison Section -->
+    <section id="compare" class="compare-section">
+        <div class="section-header">
+            <span class="section-tag">COMPARE</span>
+            <h2 class="section-title">เลือกเปรียบเทียบอุปกรณ์ของคุณ</h2>
+            <p class="section-desc">คลิกเลือกหมวดหมู่ที่ต้องการเปรียบเทียบ และเปรียบเทียบสเปกหลักของแต่ละอุปกรณ์สูงสุด 3 รุ่น</p>
+        </div>
+
+        <!-- Category Selection Tabs -->
+        <div class="category-tabs-container">
+            <button class="category-tab active" id="tab-smartphones" onclick="switchCategory('smartphones')">
+                <i data-lucide="smartphone"></i> สมาร์ตโฟน
+            </button>
+            <button class="category-tab" id="tab-laptops" onclick="switchCategory('laptops')">
+                <i data-lucide="laptop"></i> แล็ปท็อป
+            </button>
+            <button class="category-tab" id="tab-tablets" onclick="switchCategory('tablets')">
+                <i data-lucide="tablet"></i> แท็บเล็ต
+            </button>
+            <button class="category-tab" id="tab-appliances" onclick="switchCategory('appliances')">
+                <i data-lucide="plug"></i> เครื่องใช้ไฟฟ้า
+            </button>
+        </div>
+
+        <!-- Comparison Controls -->
+        <div class="compare-selector-grid">
+            <!-- Column 1 Selector -->
+            <div class="selector-card" id="col-1">
+                <div class="dropdown-wrapper">
+                    <label for="select-device-1">รุ่นที่ 1</label>
+                    <select id="select-device-1" class="device-select" onchange="updateComparison(1)">
+                        <!-- Dynamic options via JS -->
+                    </select>
+                </div>
+                <div class="device-preview">
+                    <img id="img-device-1" src="" alt="Device 1" class="preview-img">
+                    <div class="color-swatches" id="swatches-device-1">
+                        <!-- Swatches via JS -->
+                    </div>
+                </div>
+                <div class="device-summary">
+                    <h3 class="device-name-heading" id="name-device-1">-</h3>
+                    <p class="device-price-tag" id="price-device-1">-</p>
+                    <button class="btn-buy-card" onclick="buySelectedDevice(1)">ซื้อรุ่นนี้</button>
+                </div>
+            </div>
+
+            <!-- Column 2 Selector -->
+            <div class="selector-card" id="col-2">
+                <div class="dropdown-wrapper">
+                    <label for="select-device-2">รุ่นที่ 2</label>
+                    <select id="select-device-2" class="device-select" onchange="updateComparison(2)">
+                        <!-- Dynamic options via JS -->
+                    </select>
+                </div>
+                <div class="device-preview">
+                    <img id="img-device-2" src="" alt="Device 2" class="preview-img">
+                    <div class="color-swatches" id="swatches-device-2">
+                        <!-- Swatches via JS -->
+                    </div>
+                </div>
+                <div class="device-summary">
+                    <h3 class="device-name-heading" id="name-device-2">-</h3>
+                    <p class="device-price-tag" id="price-device-2">-</p>
+                    <button class="btn-buy-card" onclick="buySelectedDevice(2)">ซื้อรุ่นนี้</button>
+                </div>
+            </div>
+
+            <!-- Column 3 Selector -->
+            <div class="selector-card" id="col-3">
+                <div class="dropdown-wrapper">
+                    <label for="select-device-3">รุ่นที่ 3</label>
+                    <select id="select-device-3" class="device-select" onchange="updateComparison(3)">
+                        <!-- Dynamic options via JS -->
+                    </select>
+                </div>
+                <div class="device-preview">
+                    <img id="img-device-3" src="" alt="Device 3" class="preview-img">
+                    <div class="color-swatches" id="swatches-device-3">
+                        <!-- Swatches via JS -->
+                    </div>
+                </div>
+                <div class="device-summary">
+                    <h3 class="device-name-heading" id="name-device-3">-</h3>
+                    <p class="device-price-tag" id="price-device-3">-</p>
+                    <button class="btn-buy-card" onclick="buySelectedDevice(3)">ซื้อรุ่นนี้</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparative Spec Table (Dynamically updated rows via JS) -->
+        <div class="spec-table-container" id="spec-table-container">
+            <!-- Table content will be generated dynamically in JS -->
+        </div>
+    </section>
+
+    <!-- 3D Product Interactive Viewer Section -->
+    <section id="showcase-3d-sec" class="showcase-3d-section">
+        <div class="section-header">
+            <span class="section-tag">3D INTERACTIVE</span>
+            <h2 class="section-title">หมุนชมสินค้าเครื่องใช้ไฟฟ้าแบบ 3 มิติ</h2>
+            <p class="section-desc">คลิกเลือกประเภทเครื่องใช้ไฟฟ้าเพื่อสร้างวัตถุ 3D ขึ้นมา จากนั้นหมุนตรวจดีไซน์ได้รอบทิศทาง 360 องศาโดยใช้เมาส์ลาก หรือเลื่อนสไลเดอร์</p>
+        </div>
+
+        <div class="showcase-3d-container">
+            <!-- 3D Controls -->
+            <div class="showcase-3d-info">
+                <div class="badge badge-outline">3D MODEL VIEW</div>
+                <h3 id="showcase-3d-title">ตู้เย็นอัจฉริยะ Family Hub</h3>
+                <p id="showcase-3d-desc">ตู้เย็นสองประตูดีไซน์พรีเมียมสี Titanium Silver ที่มีแผงหน้าจอทัชสกรีนอัจฉริยะขนาด 32 นิ้วในตัว พร้อมฟังก์ชันภายในที่ครบครัน สามารถหมุนเพื่อตรวจสอบดีไซน์ขอบมุมและแผงด้านข้างได้รอบตัว</p>
+                
+                <div class="appliance-selector-3d">
+                    <button class="btn-select-3d active" id="btn-3d-fridge" onclick="select3DProduct('fridge')">
+                        <i data-lucide="snowflake"></i> ตู้เย็น Family Hub
+                    </button>
+                    <button class="btn-select-3d" id="btn-3d-washer" onclick="select3DProduct('washer')">
+                        <i data-lucide="disc"></i> เครื่องซักผ้า AI Ecobubble
+                    </button>
+                    <button class="btn-select-3d" id="btn-3d-tv" onclick="select3DProduct('tv')">
+                        <i data-lucide="tv"></i> สมาร์ตทีวี Neo QLED
+                    </button>
+                </div>
+
+                <!-- Rotation slider controls -->
+                <div class="rotation-controls">
+                    <div class="control-row">
+                        <div style="display: flex; justify-content: space-between;">
+                            <label for="rot-y">หมุนแนวราบ (แกน Y):</label>
+                            <span id="rot-y-val" style="color: var(--accent-cyan); font-weight: 700;">0°</span>
+                        </div>
+                        <input type="range" id="rot-y" min="-180" max="180" value="0" oninput="rotate3DModel()">
+                    </div>
+                    <div class="control-row">
+                        <div style="display: flex; justify-content: space-between;">
+                            <label for="rot-x">หมุนแนวดิ่ง (แกน X):</label>
+                            <span id="rot-x-val" style="color: var(--accent-cyan); font-weight: 700;">0°</span>
+                        </div>
+                        <input type="range" id="rot-x" min="-45" max="45" value="0" oninput="rotate3DModel()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Scene Viewport -->
+            <div class="showcase-3d-viewport" id="viewport-3d">
+                <div class="scene-3d">
+                    <!-- The actual 3D model box container -->
+                    <div class="model-3d fridge" id="model-3d-box">
+                        <!-- Faces will be dynamically added/styled by JS/CSS -->
+                        <div class="face front" id="face-front"></div>
+                        <div class="face back" id="face-back"></div>
+                        <div class="face left" id="face-left"></div>
+                        <div class="face right" id="face-right"></div>
+                        <div class="face top" id="face-top"></div>
+                        <div class="face bottom" id="face-bottom"></div>
+                    </div>
+                </div>
+                <div class="viewport-tip"><i data-lucide="move"></i> คลิกลากเมาส์บนกล่องสินค้าเพื่อหมุนได้ 3D</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Zoom Interactive Simulator -->
+    <section id="zoom-sec" class="zoom-section">
+        <div class="zoom-container">
+            <div class="zoom-info">
+                <div class="badge">CAMERA TECH</div>
+                <h2>Space Zoom 100x</h2>
+                <p>สัมผัสพลังแห่งการซูมแบบไร้ขีดจำกัดด้วยกล้อง Quad Telephoto 50/10 MP และ AI Detail Enhancer ใน Galaxy S26 Ultra ที่ให้คุณถ่ายภาพในระยะไกลสุดสายตาให้ชัดเจนราวกับอยู่ตรงหน้า</p>
+                <div class="zoom-instructions">
+                    <i data-lucide="info"></i> เลื่อนแถบควบคุมด้านล่างเพื่อทดลองระดับการซูม 1x ไปจนถึง 100x
+                </div>
+            </div>
+            
+            <div class="zoom-simulator">
+                <div class="camera-viewfinder">
+                    <div class="viewfinder-grid"></div>
+                    <div class="viewfinder-focus-box"></div>
+                    <!-- Zooming background container -->
+                    <div class="zoom-img-container" id="zoom-container">
+                        <img src="images/zoom_bg.jpg" alt="Bangkok skyline at night with moon" id="zoom-bg-img">
+                    </div>
+                    <!-- Zoom indicator overlay -->
+                    <div class="zoom-badge-overlay" id="zoom-badge">1.0x</div>
+                    <div class="zoom-mode-overlay"><i data-lucide="moon"></i> NIGHT MODE ACTIVE</div>
+                </div>
+                <div class="zoom-slider-container">
+                    <button class="zoom-btn" onclick="setZoom(1)">1x</button>
+                    <input type="range" min="1" max="100" value="1" class="zoom-range-slider" id="zoom-range" oninput="handleZoomSlider(this.value)">
+                    <button class="zoom-btn" onclick="setZoom(100)">100x</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Display Interactive Simulator -->
+    <section id="privacy-sec" class="privacy-section">
+        <div class="privacy-container">
+            <div class="privacy-simulator-side">
+                <div class="phone-mockup-container">
+                    <!-- Tilt wrapper to actually tilt the phone in 3D -->
+                    <div class="phone-3d-wrapper" id="phone-3d">
+                        <div class="phone-bezel">
+                            <div class="phone-screen">
+                                <!-- Normal bright content -->
+                                <div class="screen-content">
+                                    <div class="mock-bank-app">
+                                        <div class="bank-header">
+                                            <i data-lucide="shield-check"></i> WashWise Mobile Banking
+                                        </div>
+                                        <div class="bank-balance">
+                                            <span>ยอดเงินในบัญชี</span>
+                                            <h2>฿1,425,800.00</h2>
+                                        </div>
+                                        <div class="bank-transactions">
+                                            <div class="tx-item">
+                                                <span>โอนเงินเข้า</span>
+                                                <span class="tx-amt plus">+฿15,000.00</span>
+                                            </div>
+                                            <div class="tx-item">
+                                                <span>ค่าอาหารค่ำ</span>
+                                                <span class="tx-amt minus">-฿1,250.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dark privacy overlay that react to angle -->
+                                <div class="privacy-overlay" id="privacy-overlay">
+                                    <div class="privacy-text-warning"><i data-lucide="eye-off"></i> ปิดกั้นมุมมองบุคคลภายนอก</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Angle indicators -->
+                <div class="angle-display">
+                    มุมมองการอ่าน: <span id="angle-value">0°</span> (หันหน้าตรง)
+                </div>
+            </div>
+
+            <div class="privacy-info-side">
+                <div class="badge">WORLD'S FIRST</div>
+                <h2>Privacy Display Technology</h2>
+                <p>หมดยามกังวลว่าคนรอบข้างจะเหลือบมองหน้าจอโทรศัพท์ของคุณด้วยเทคโนโลยี **Privacy Display** ตัวกรองความเป็นส่วนตัวแบบอัจฉริยะที่จะตรวจจับมุมมองการมองเห็นโดยรอบ และจำกัดแสงหน้าจอให้เห็นเฉพาะผู้ที่ใช้งานตรงหน้าตรงเท่านั้นในมุมมอง ±30°</p>
+                <div class="angle-control-box">
+                    <label for="angle-range">ทดลองเอียงมุมมองหน้าจอ:</label>
+                    <div class="slider-wrapper">
+                        <span>ซ้าย (80°)</span>
+                        <input type="range" min="-80" max="80" value="0" class="angle-slider" id="angle-range" oninput="handleAngleSlider(this.value)">
+                        <span>ขวา (80°)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="faq-section">
+        <div class="section-header">
+            <span class="section-tag">FAQ</span>
+            <h2 class="section-title">คำถามที่พบบ่อย</h2>
+        </div>
+        <div class="faq-accordion-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>แล็ปท็อปตระกูล Galaxy Book5 มีการปรับปรุงและใช้ระบบระบายความร้อนอย่างไร?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Galaxy Book5 Ultra มาพร้อมระบบระบายความร้อนแบบ Vapor Chamber ขนาดใหญ่ขึ้นกว่ารุ่นก่อนหน้าถึง 20% ทำให้ชิป Intel® Core™ Ultra 9 และการ์ดจอ NVIDIA® RTX 4070 ทำงานได้เต็มกำลังโดยที่ตัวเครื่องยังมีขนาดบางเฉียบและน้ำหนักเบา</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>แท็บเล็ตและแล็ปท็อปของ Galaxy สนับสนุนการใช้งานร่วมกับปากกา S Pen หรือไม่?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>ใช่ครับ แท็บเล็ตตระกูล Galaxy Tab S10 ทุกรุ่นมาพร้อมกับปากกา S Pen ในกล่องที่มีการตอบสนองความเร็วระดับดีเยี่ยม ส่วนในแล็ปท็อปรุ่น Galaxy Book5 Pro 360 จะรองรับการทัชสกรีนและเขียนบนหน้าจอด้วย S Pen ได้โดยตรงเช่นเดียวกัน</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>ตู้เย็นอัจฉริยะ Family Hub มีฟังก์ชันการจัดการพลังงานแบบ AI อย่างไร?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>ตู้เย็นอัจฉริยะมาพร้อมระบบ AI Energy Mode ผ่านแอป SmartThings ซึ่งจะวิเคราะห์พฤติกรรมการเปิดใช้งานตู้เย็นและคำนวณรอบการทำงานของอินเวอร์เตอร์คอมเพรสเซอร์เพื่อประหยัดไฟขึ้นสูงสุด 15% พร้อมหน้าจอ Family Hub ที่คอยรายงานอัตราค่าไฟได้เรียลไทม์</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>มีโปรโมชันสำหรับการซื้อเครื่องผ่านหน้าเว็บนี้อย่างไรบ้าง?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>สำหรับลูกค้าที่สั่งซื้อออนไลน์ผ่านหน้าเว็บวันนี้ รับสิทธิ์ลดค่าเครื่องสูงสุด ฿10,000 เมื่อนำเครื่องเก่ามาแลกซื้อเครื่องใหม่ (Trade-in) รวมถึงโปรโมชันผ่อนชำระ 0% นานสูงสุด 10 เดือนผ่านบัตรเครดิตที่ร่วมรายการ พร้อมรับของสมนาคุณพิเศษตามหมวดหมู่สินค้าที่กำหนด</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Configurator Modal -->
+    <div class="modal-backdrop" id="buy-modal">
+        <div class="modal-content">
+            <button class="btn-close-modal" onclick="closeBuyModal()"><i data-lucide="x"></i></button>
+            
+            <div class="modal-grid">
+                <!-- Product Preview Column -->
+                <div class="modal-preview-col">
+                    <img id="modal-product-img" src="images/s26_ultra.jpg" alt="Galaxy Product" class="modal-img">
+                    <div class="modal-product-specs">
+                        <h3 id="modal-product-name">Galaxy S26 Ultra</h3>
+                        <p class="modal-product-chip" id="modal-product-desc">Snapdragon 8 Elite Gen 5 for Galaxy</p>
+                    </div>
+                </div>
+
+                <!-- Configurator Form Column -->
+                <div class="modal-config-col">
+                    <h2>เลือกซื้อผลิตภัณฑ์ของคุณ</h2>
+                    
+                    <!-- Color Swatches Selection -->
+                    <div class="config-section">
+                        <h3>1. เลือกสีตัวเครื่อง</h3>
+                        <div class="color-options-grid" id="modal-color-options">
+                            <!-- Dynamic colors -->
+                        </div>
+                        <p class="selected-color-label">สีที่เลือก: <strong id="modal-color-name">-</strong></p>
+                    </div>
+
+                    <!-- Storage Configuration -->
+                    <div class="config-section">
+                        <h3>2. เลือกความจุ / ขนาด</h3>
+                        <div class="storage-options-grid" id="modal-storage-options">
+                            <!-- Dynamic storage buttons -->
+                        </div>
+                    </div>
+
+                    <!-- Add-ons Selection -->
+                    <div class="config-section">
+                        <h3>3. สิทธิพิเศษ & การคุ้มครองเพิ่มเติม</h3>
+                        <div class="addons-list" id="modal-addons-list">
+                            <!-- Addons dynamically populated by JS based on category -->
+                        </div>
+                    </div>
+
+                    <!-- Checkout Summary Section -->
+                    <div class="checkout-summary">
+                        <div class="summary-row">
+                            <span>ราคาเครื่องเริ่มต้น:</span>
+                            <span id="summary-base-price">฿0.00</span>
+                        </div>
+                        <div class="summary-row" id="summary-care-row" style="display: none;">
+                            <span>การดูแลและคุ้มครองเสริม:</span>
+                            <span id="summary-care-price">+฿0.00</span>
+                        </div>
+                        <div class="summary-row" id="summary-tradein-row" style="display: none;">
+                            <span>ส่วนลดพิเศษ Trade-in:</span>
+                            <span class="discount">-฿10,000.00</span>
+                        </div>
+                        <hr class="summary-divider">
+                        <div class="summary-total-row">
+                            <span>ราคาสุทธิ:</span>
+                            <span id="summary-total-price">฿0.00</span>
+                        </div>
+                        <div class="summary-payment-options">
+                            <p><i data-lucide="credit-card"></i> ผ่อนชำระ 0% เริ่มต้น <strong id="summary-monthly-pay">฿0</strong> / เดือน นาน 10 เดือน</p>
+                        </div>
+
+                        <!-- Checkout CTA -->
+                        <button class="btn-checkout-submit" onclick="submitOrder()">
+                            <i data-lucide="shopping-bag"></i> ไปยังหน้าชำระเงิน
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script imports -->
+    <script src="app.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

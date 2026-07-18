@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รีวิวร้านค้า - TUNGTUNGTUNGFOOD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function handleComment(event) {
+      event.preventDefault();
+      const name = document.getElementById('username').value;
+      const message = document.getElementById('comment').value;
+      if (name && message) {
+        const newComment = `
+          <div class="comment-box">
+            <h6>${name} <small>- เพิ่งแสดงความคิดเห็น</small></h6>
+            <p>${message}</p>
+          </div>
+        `;
+        document.getElementById('comment-list').insertAdjacentHTML('beforeend', newComment);
+        document.getElementById('username').value = '';
+        document.getElementById('comment').value = '';
+      }
+    }
+  </script>
+</head>
+<body>
+    <nav class="navbar bg-white shadow-sm py-3 sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <span class="text-danger fw-bold fs-4">TUNGTUNGTUNG<span class="text-warning">FOOD</span></span> 
+      </a>
+      <ul class="nav align-items-center">
+        <li class="nav-item">
+          <a href="menu.html" class="nav-link fw-bold" >เมนู</a>
+        </li>
+        <li class="nav-item">
+          <a href="reviews.html" class="nav-link active fw-bold text-dark">รีวิวร้านค้า</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe me-1"></i> Thai
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Japan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-3">
+          <a href="register.html" class="btn btn-outline-dark btn-sm"><i class="fas fa-user me-1"></i> เข้าสู่ระบบ</a>
+        </li>
+        <li class="nav-item">
+          <a href="cart.html" class="text-decoration-none position-relative">
+            <i class="fas fa-shopping-basket fa-lg text-dark"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="text-center">รีวิวร้านค้าแนะนำ</h2>
+
+    <div class="dropdown mb-4">
+      <button class="btn btn-premium dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        เลือกประเภทอาหาร
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">อาหารตามสั่ง</a></li>
+        <li><a class="dropdown-item" href="#">ก๋วยเตี๋ยว</a></li>
+        <li><a class="dropdown-item" href="#">ชา / กาแฟ</a></li>
+        <li><a class="dropdown-item" href="#">ขนมหวาน</a></li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="alert alert-success">ร้านยอดนิยม</div>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">ครัวคุณแม่</div>
+              อาหารตามสั่ง รสจัดจ้าน
+            </div>
+            <span class="badge bg-success rounded-pill">95%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-success" style="width: 95%">95%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">ก๋วยเตี๋ยวเรือป้าติ๋ม</div>
+              น้ำซุปเข้มข้นสุด ๆ
+            </div>
+            <span class="badge bg-primary rounded-pill">90%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-primary" style="width: 90%">90%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">บ้านขนมไทย</div>
+              ขนมหวานไทยแท้
+            </div>
+            <span class="badge bg-info rounded-pill">85%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 85%">85%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">ร้านป้าแดง</div>
+              ข้าวราดแกงอร่อยมาก
+            </div>
+            <span class="badge bg-success rounded-pill">88%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-success" style="width: 88%">88%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">ข้าวแกงคุณต้อย</div>
+              เมนูหลากหลาย ราคาถูก
+            </div>
+            <span class="badge bg-info rounded-pill">82%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 82%">82%</div></div>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="alert alert-info">ร้านบรรยากาศดี</div>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">The Coffee Corner</div>
+              ร้านกาแฟบรรยากาศดี
+            </div>
+            <span class="badge bg-primary rounded-pill">92%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-success" style="width: 92%">92%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Chill Bar</div>
+              ดื่มชาในสวน
+            </div>
+            <span class="badge bg-primary rounded-pill">80%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-warning" style="width: 80%">80%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Riverside Café</div>
+              วิวแม่น้ำสุดชิลล์
+            </div>
+            <span class="badge bg-primary rounded-pill">87%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 87%">87%</div></div>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="alert alert-warning">ร้านราคาดี</div>
+        <ul class="list-group list-group-numbered">
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">เจ๊แดงอาหารตามสั่ง</div>
+              ราคาเริ่มต้น 40 บาท
+            </div>
+            <span class="badge bg-success rounded-pill">88%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-success" style="width: 88%">88%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">นายฮ้อยก๋วยเตี๋ยว</div>
+              ชามละ 35 บาท!
+            </div>
+            <span class="badge bg-primary rounded-pill">83%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-info" style="width: 83%">83%</div></div>
+
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">ข้าวแกงป้านวล</div>
+              ถูกและอร่อย
+            </div>
+            <span class="badge bg-warning rounded-pill">79%</span>
+          </li>
+          <div class="progress mb-3"><div class="progress-bar bg-warning" style="width: 79%">79%</div></div>
+        </ul>   
+      </div>
+
+    <div class="mt-5">
+      <h4 class="mb-3">ความคิดเห็นจากลูกค้า</h4>
+      <div id="comment-list">
+        <div class="comment-box">
+          <h6>สมชาย ใจดี <small> - 2 วันที่แล้ว</small></h6>
+          <p>อาหารอร่อย บริการดี ราคาย่อมเยา จะกลับมาใช้บริการอีกแน่นอน!</p>
+        </div>
+        <div class="comment-box">
+          <h6>สายไหม หวานเย็น <small> - 5 วันที่แล้ว</small></h6>
+          <p>ขนมหวานบ้านขนมไทยอร่อยมาก ๆ ค่ะ ให้คะแนนเต็มเลย</p>
+        </div>
+      </div>
+
+      <h5 class="mt-4">แสดงความคิดเห็น</h5>
+      <form onsubmit="handleComment(event)">
+        <div class="mb-3">
+          <label for="username" class="form-label">ชื่อของคุณ</label>
+          <input type="text" class="form-control" id="username" placeholder="ใส่ชื่อของคุณ">
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">ความคิดเห็น</label>
+          <textarea class="form-control" id="comment" rows="3" placeholder="เขียนความคิดเห็นของคุณที่นี่..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-premium">ส่งความคิดเห็น</button>
+      </form>
+    </div>
+
+    <div class="text-center mt-4 mb-5">
+      <a href="index.html" class="btn btn-outline-danger">กลับหน้าเมนู</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เมนูอาหาร - TUNGTUNGTUNGFOOD</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar bg-white shadow-sm py-3 sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <span class="text-danger fw-bold fs-4">TUNGTUNGTUNG<span class="text-warning">FOOD</span></span> 
+      </a>
+      <ul class="nav align-items-center">
+        <li class="nav-item">
+          <a href="menu.html" class="nav-link active fw-bold" style="color: var(--primary);">เมนู</a>
+        </li>
+        <li class="nav-item">
+          <a href="reviews.html" class="nav-link text-dark">รีวิวร้านค้า</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe me-1"></i> Thai
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Japan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-3">
+          <a href="register.html" class="btn btn-outline-dark btn-sm"><i class="fas fa-user me-1"></i> เข้าสู่ระบบ</a>
+        </li>
+        <li class="nav-item">
+          <a href="cart.html" class="text-decoration-none position-relative">
+            <i class="fas fa-shopping-basket fa-lg text-dark"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar">
+    <h5>ประเภทเมนู</h5>
+    <a href="#promo">โปรโมชั่น</a>
+    <a href="#express">อาหารส่งด่วน</a>
+    <a href="#made-to-order">อาหารตามสั่ง</a>
+    <a href="#noodles">ก๋วยเตี๋ยว</a>
+    <a href="#coffee">ชา / กาแฟ</a>
+    <a href="#dessert">ขนมหวาน</a>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <h2 id="promo" class="mb-4">โปรโมชั่น</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://files.eventpass.co/eventpass-api/files/1624245903608-2021621-102121.jpeg" alt="Promo"><div class="card-body"><h5 class="menu-title">ชุดอิ่มคุ้ม 1</h5><p class="card-text">ไก่ทอด 9 ชิ้นอิ่มคุ้มๆ</p></div><div class="card-footer text-center"><span class="price">฿159</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://images.deliveryhero.io/image/fd-th/LH/mee0-listing.jpg" alt="Promo"><div class="card-body"><h5 class="menu-title">ชุดอิ่มจุก</h5><p class="card-text">ไก่ทอด 3 ชิ้น เฟรนช์ฟรายส์</p></div><div class="card-footer text-center"><span class="price">฿239</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://img.lazcdn.com/g/p/8886ec6bb53486ebb54f55fc00e409d4.png_720x720q80.png" alt="Promo"><div class="card-body"><h5 class="menu-title">ชุดข้าวไก่กรอบ</h5><p class="card-text">ข้าวหน้าไก่กรอบ + น้ำ</p></div><div class="card-footer text-center"><span class="price">฿109</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+      </div>
+      <h2 id="express" class="mt-5 mb-4">อาหารส่งด่วน</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.6435-9/118270692_143882920720407_6073617632914083074_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG6BMQ6tIEiVRjnRVufS-bYsf8VoUgqGf-x_xWhSCoZ_38bwB6PalWFXZjosl04eDD17FdVqwGe6nOGqdY7vRgR&_nc_ohc=x5KyRFXZF7cQ7kNvwFp7_si&_nc_oc=AdlFGgtapOQUx8krCLKhcHqvQ-rWqjIo_LIu0XbO2I2OSjO8MDHgxrYIIEQ3mZLXzUgNGBfmrJavJzrm6F21LTSj&_nc_zt=23&_nc_ht=scontent.fbkk5-4.fna&_nc_gid=7lxHVgxOJ_cQ_Achy0nuwQ&oh=00_AfEZOeIkBULv3j1s1sekgh3Y6YcSiQm3C8qNI_KCEh37kg&oe=683BF730" alt="ไข่เจียว"><div class="card-body"><h5 class="menu-title">ข้าวไข่เจียว</h5><p class="card-text">พร้อมน้ำซุป</p></div><div class="card-footer text-center"><span class="price">฿70</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://img-global.cpcdn.com/recipes/f3b0229d83b33add/1200x630cq70/photo.jpg" alt="กะเพรา"><div class="card-body"><h5 class="menu-title">ข้าวกะเพราไก่ไข่ดาว</h5><p class="card-text">เผ็ดนิดกำลังดี</p></div><div class="card-footer text-center"><span class="price">฿65</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://images.deliveryhero.io/image/fd-th/LH/ky0x-listing.jpg" alt="ข้าวผัด"><div class="card-body"><h5 class="menu-title">ข้าวมันไก่</h5><p class="card-text">ไก่นุ่มๆฟินๆ</p></div><div class="card-footer text-center"><span class="price">฿50</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container">
+      <h2 id="made-to-order" class="mb-4">อาหารตามสั่ง</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://i.pinimg.com/736x/6f/9d/13/6f9d133ee92c028963ecac4edea4dd50.jpg" alt="Promo"><div class="card-body"><h5 class="menu-title">กระเพราหมูกรอบไข่ดาว </h5><p class="card-text">อร่อยไม่เหมือนที่ไหน
+        </p></div><div class="card-footer text-center"><span class="price">฿199</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://s359.kapook.com/pagebuilder/d0b8a629-aded-4ff0-b623-6511bc54fb52.jpg" alt="ข้าวผัด"><div class="card-body"><h5 class="menu-title">ข้าวผัดหมู</h5><p class="card-text">ข้าวหอมกระทะหมูนุ่ม</p></div><div class="card-footer text-center"><span class="price">฿50</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+        <div class="col-md-4"><div class="card food-card h-100"><img  src="https://i.ytimg.com/vi/KcvHKpwYDS4/hqdefault.jpg" alt="Promo"><div class="card-body"><h5 class="menu-title">ชุดข้าวไก่กรอบ</h5><p class="card-text">ข้าวหน้าไก่กรอบ + น้ำ</p></div><div class="card-footer text-center"><span class="price">฿109</span><button class="btn btn-premium w-100 mt-2">สั่งเลย</button></div></div></div>
+      </div>
+      <h2 id="coffee" class="mt-5 mb-4">ชา / กาแฟ</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card food-card h-100">
+            <img  src="https://cms.dmpcdn.com/food/2021/05/05/00a9fe30-ad7d-11eb-a73b-c395e0dfc07b_original.jpg" alt="ชาไทยเย็น">
+            <div class="card-body">
+              <h5 class="menu-title">ชาไทยเย็น</h5>
+              <p class="card-text">หอม หวาน มัน กลมกล่อม</p>
+            </div>
+            <div class="card-footer text-center">
+              <span class="price">฿30</span>
+              <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card food-card h-100">
+            <img  src="https://thumb.photo-ac.com/9c/9ca2bd0d0fd820edf9dd0268bc3faea0_t.jpeg" alt="กาแฟดำเย็น">
+            <div class="card-body">
+              <h5 class="menu-title">กาแฟดำเย็น</h5>
+              <p class="card-text">เข้มข้นไม่หวาน</p>
+            </div>
+            <div class="card-footer text-center">
+              <span class="price">฿35</span>
+              <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card food-card h-100">
+            <img  src="https://s359.kapook.com/r/600/auto/pagebuilder/812fd299-6926-463e-ab70-dcbaeba99b30.jpg" alt="โกโก้เย็น">
+            <div class="card-body">
+              <h5 class="menu-title">โกโก้เย็น</h5>
+              <p class="card-text">โกโก้เข้ม หวานมัน</p>
+            </div>
+            <div class="card-footer text-center">
+              <span class="price">฿35</span>
+              <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+<section class="mt-5">
+  <h2 id="noodles" class="mb-4">ก๋วยเตี๋ยว</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://img.wongnai.com/p/1920x0/2020/01/20/0e4c6a1ca489437985a9636f29bec582.jpg" alt="เรือหมู">
+        <div class="card-body">
+          <h5 class="menu-title">ก๋วยเตี๋ยวเรือหมู</h5>
+          <p class="card-text">น้ำซุปเข้มข้น เสิร์ฟร้อน</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿45</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://i.ytimg.com/vi/Rw2J93JRwew/sddefault.jpg" alt="ต้มยำ">
+        <div class="card-body">
+          <h5 class="menu-title">ต้มยำหมูเด้ง</h5>
+          <p class="card-text">เปรี้ยวจี๊ด เผ็ดร้อน</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿55</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://chefsclub.makro.co.th/cdn/shop/articles/Screenshot_2024-11-25_at_3.27.49_pm.png?v=1732528818" alt="เย็นตาโฟ">
+        <div class="card-body">
+          <h5 class="menu-title">เย็นตาโฟทรงเครื่อง</h5>
+          <p class="card-text">ลูกชิ้นปลาหมึกกรอบจัดเต็ม</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿60</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-5 mb-5">
+  <h2 id="dessert" class="mb-4">ขนมหวาน</h2>
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://www.ofm.co.th/blog/wp-content/uploads/2022/04/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87-1.jpg" alt="ข้าวเหนียวมะม่วง">
+        <div class="card-body">
+          <h5 class="menu-title">ข้าวเหนียวมะม่วง</h5>
+          <p class="card-text">มะม่วงน้ำดอกไม้ ข้าวเหนียวนุ่ม</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿50</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://img.kapook.com/u/2022/wanwanat/1079595941.jpg" alt="บัวลอยไข่หวาน">
+        <div class="card-body">
+          <h5 class="menu-title">บัวลอยไข่หวาน</h5>
+          <p class="card-text">แป้งเหนียวนุ่ม น้ำกะทิหอมมัน</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿40</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card food-card h-100">
+        <img  src="https://dessertsmate.com/wp-content/uploads/2023/10/157-%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%81%E0%B8%B0%E0%B8%97%E0%B8%B4-%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%99-%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%99%E0%B8%B8%E0%B9%88%E0%B8%A1-%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%81%E0%B8%B0%E0%B8%97%E0%B8%B4%E0%B8%AB%E0%B8%AD%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B8%B1%E0%B8%99.jpg" alt="ลอดช่อง">
+        <div class="card-body">
+          <h5 class="menu-title">ลอดช่องน้ำกะทิ</h5>
+          <p class="card-text">เย็นชื่นใจ หวานมัน</p>
+        </div>
+        <div class="card-footer text-center">
+          <span class="price">฿35</span>
+          <button class="btn btn-premium w-100 mt-2">สั่งเลย</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  
+  </script>
+</body>
+</html>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
