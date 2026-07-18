@@ -1,0 +1,1508 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kosan Phongthanu — Portfolio</title>
+  <meta name="description" content="พอร์ตโฟลิโอของโกศัลย์ พงษ์ธนู นักศึกษาเทคโนโลยีสารสนเทศ ม.กรุงเทพ ที่สร้างระบบจริงตั้งแต่ POS ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์ IoT ผสมงานออกแบบ โค้ด และความคิดเชิงธุรกิจไว้ในตัวเดียว">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kosan Phongthanu — Portfolio">
+  <meta property="og:description" content="นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ">
+  <meta property="og:image" content="https://i.imgur.com/3Z38He8.png">
+  <meta property="og:url" content="https://pooh23z.github.io/portfolio">
+  <link rel="icon" type="image/png" href="https://i.imgur.com/3Z38He8.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kosan Phongthanu — Portfolio">
+  <meta name="twitter:description" content="นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ">
+  <meta name="twitter:image" content="https://i.imgur.com/3Z38He8.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F5F5F2;
+      --surface: #FFFFFF;
+      --ink: #15171A;
+      --steel: #5B6168;
+      --steel-soft: #8A8F94;
+      --line: #E1E1DC;
+      --signal: #5640D6;
+      --signal-soft: #EFEBFC;
+      --ok: #2E7D5B;
+      --ok-soft: #E7F3EC;
+      --warn: #B5790E;
+      --warn-soft: #FBF1DF;
+      --radius: 14px;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .display {
+      font-family: 'Chonburi', serif;
+    }
+
+    /* ---------- nav ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 245, 242, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--steel);
+      transition: color .15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--signal);
+    }
+
+    .lang-switch {
+      display: flex;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+
+    .lang-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 13px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--steel-soft);
+      transition: background .15s, color .15s;
+    }
+
+    .lang-btn.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--signal);
+    }
+
+    /* applies to every link on the page, so the nav links are covered too —
+       no need to repeat the .nav-links a selector here */
+    a:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      padding: 72px 0 40px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--signal);
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .hero-name {
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 2.4vw, 20px);
+      color: var(--steel);
+      max-width: 620px;
+      margin: 0 0 40px;
+      font-weight: 400;
+    }
+
+    /* hero portrait photo */
+    .hero-photo {
+      width: 220px;
+      height: 280px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+      background: #EDEEEA; /* fallback while no photo src is set */
+      box-shadow: 0 4px 24px rgba(21, 23, 26, 0.10);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* readout strip — signature element */
+    .readout {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .readout-cell {
+      flex: 1 1 150px;
+      padding: 18px 20px;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+
+    .readout-cell:last-child {
+      border-right: none;
+    }
+
+    .readout-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel-soft);
+      margin: 0 0 8px;
+    }
+
+    .readout-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: clamp(18px, 2.6vw, 24px);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .readout-value .unit {
+      font-size: 13px;
+      color: var(--steel);
+      font-weight: 400;
+      margin-left: 3px;
+    }
+
+    .readout-dot {
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+
+    /* ---------- section shell ---------- */
+    .section {
+      padding: 84px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin: 0 0 40px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.4vw, 34px);
+      margin: 6px 0 0;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .section-lede {
+      color: var(--steel);
+      max-width: 620px;
+      margin: 14px 0 0;
+      font-size: 16px;
+    }
+
+    /* ---------- intro ---------- */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .intro-text p {
+      color: var(--ink);
+      font-size: 17.5px;
+      margin: 0 0 18px;
+    }
+
+    .intro-text strong {
+      color: var(--signal);
+      font-weight: 600;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 26px 22px;
+    }
+
+    .intro-card h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel-soft);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+
+    .intro-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .intro-card li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14.5px;
+      flex-wrap: wrap;
+    }
+
+    .intro-card li:last-child {
+      border-bottom: none;
+    }
+
+    .intro-card li span:first-child {
+      color: var(--steel);
+    }
+
+    .intro-card li span:last-child {
+      color: var(--ink);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* ---------- work grid ---------- */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+      border-color: #D1D5DB;
+    }
+
+    .work-card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .work-card.featured .work-media-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    .work-media {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #EDEEEA; /* fallback while no screenshot src is set */
+    }
+
+    .work-card.featured .work-media {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 260px;
+    }
+
+    .work-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .work-card:hover .work-media img {
+      transform: scale(1.05);
+    }
+
+    .work-id {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      background: rgba(21, 23, 26, 0.78);
+      color: #fff;
+      padding: 4px 9px;
+      border-radius: 6px;
+    }
+
+    .work-body {
+      padding: 22px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .work-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .tag.t-self {
+      background: var(--ok-soft);
+      color: var(--ok);
+    }
+
+    .tag.t-self::before {
+      background: var(--ok);
+    }
+
+    .tag.t-group {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    .tag.t-group::before {
+      background: var(--warn);
+    }
+
+    .tag.t-skill {
+      background: var(--signal-soft);
+      color: var(--signal);
+    }
+
+    .tag.t-skill::before {
+      background: var(--signal);
+    }
+
+    .work-title {
+      font-size: 19px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .work-desc {
+      font-size: 14.5px;
+      color: var(--steel);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .work-link {
+      margin-top: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      color: var(--steel-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .demo-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--signal);
+      background: var(--signal-soft);
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 20px;
+      transition: background .15s, color .15s, transform .15s, gap .15s, box-shadow .15s;
+    }
+
+    .demo-btn:hover {
+      background: var(--signal);
+      color: #fff;
+      transform: translateY(-2px);
+      gap: 9px;
+      box-shadow: 0 6px 16px rgba(86, 64, 214, 0.28);
+    }
+
+    .demo-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    /* code-preview card (no screenshot) */
+    .code-media {
+      aspect-ratio: 16/10;
+      background: #181A1F;
+      color: #D7DAE0;
+      padding: 20px 22px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.7;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .code-media .ln {
+      color: #5A6068;
+      margin-right: 14px;
+      user-select: none;
+    }
+
+    .code-media .kw {
+      color: #C792EA;
+    }
+
+    .code-media .fn {
+      color: #82AAFF;
+    }
+
+    .code-media .str {
+      color: #ECC48D;
+    }
+
+    /* ---------- skills ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 40px;
+    }
+
+    .skill-group h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin: 0 0 14px;
+      font-weight: 600;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13.5px;
+      padding: 7px 13px;
+      border-radius: 8px;
+    }
+
+    /* ---------- background ---------- */
+    .bg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .bg-col h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel-soft);
+      margin: 0 0 18px;
+      font-weight: 600;
+    }
+
+    .bg-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bg-item:last-child {
+      border-bottom: none;
+    }
+
+    .bg-role {
+      font-weight: 600;
+      font-size: 15.5px;
+      color: var(--ink);
+      margin: 0 0 3px;
+    }
+
+    .bg-org {
+      font-size: 13.5px;
+      color: var(--steel);
+      margin: 0;
+    }
+
+    .bg-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      color: var(--steel-soft);
+      margin-top: 5px;
+    }
+
+    /* ---------- contact / footer ---------- */
+    .contact {
+      padding: 84px 0 64px;
+      text-align: left;
+    }
+
+    .contact-title {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+
+    .contact-sub {
+      color: var(--steel);
+      max-width: 540px;
+      margin: 0 0 32px;
+      font-size: 16.5px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-size: 14.5px;
+      font-weight: 500;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color .15s, transform .15s;
+    }
+
+    .btn:hover {
+      border-color: var(--signal);
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .btn.primary:hover {
+      background: var(--signal);
+      border-color: var(--signal);
+    }
+
+    .foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      color: var(--steel-soft);
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        padding: 0 20px;
+      }
+
+      .nav-inner {
+        padding: 14px 20px;
+      }
+
+      .intro-grid,
+      .work-card.featured .work-media-row,
+      .skills-grid,
+      .bg-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 12.5px;
+      }
+
+      .readout-cell {
+        flex: 1 1 45%;
+      }
+
+      .hero {
+        padding: 40px 0 32px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-photo {
+        width: 140px;
+        height: 175px;
+        order: -1;
+        margin: 0 auto;
+      }
+
+      .work-card.featured .work-media {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16/10;
+      }
+
+      .contact-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+
+      .foot-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      .nav-inner {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .nav-name {
+        font-size: 13px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 11.5px;
+      }
+
+      .lang-switch {
+        margin-left: 0;
+      }
+
+      .hero {
+        padding: 32px 0 28px;
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+
+      .readout-cell {
+        flex: 1 1 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .readout-cell:last-child {
+        border-bottom: none;
+      }
+
+      .work-body {
+        padding: 18px 18px 20px;
+      }
+
+      .intro-card {
+        padding: 20px 20px 18px;
+      }
+
+      .work-title {
+        font-size: 17.5px;
+      }
+
+      .contact-sub {
+        font-size: 15px;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-size: 20px;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: var(--signal);
+      transform: translateY(-3px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn,
+      .nav-links a {
+        transition: none;
+      }
+      
+      .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-name mono" data-i18n="nav-name">โกศัลย์ พงษ์ธนู</span>
+      <div class="nav-links">
+        <a href="#work" data-i18n="nav-work">ผลงาน</a>
+        <a href="#skills" data-i18n="nav-skills">ทักษะ</a>
+        <a href="#background" data-i18n="nav-background">ประวัติ</a>
+        <a href="#certifications" data-i18n="nav-certs">ใบเซอร์</a>
+        <a href="#contact" data-i18n="nav-contact">ติดต่อ</a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language / ภาษา">
+        <button type="button" class="lang-btn active" data-lang="th">TH</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+
+        <div class="hero-left">
+          <p class="eyebrow">PORTFOLIO — IT STUDENT, BANGKOK UNIVERSITY</p>
+          <h1 class="hero-name display" data-i18n="hero-name">โกศัลย์ พงษ์ธนู</h1>
+          <p class="hero-sub" data-i18n="hero-sub">นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ ผสมงานออกแบบ โค้ด และความคิดเชิงธุรกิจไว้ในตัวเดียว</p>
+
+          <div style="margin-bottom: 40px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn primary" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
+            <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
+          </div>
+
+          <div class="readout">
+            <div class="readout-cell">
+              <p class="readout-label">LINE Friends</p>
+              <p class="readout-value">203<span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
+              <span class="readout-dot"></span>
+            </div>
+            <div class="readout-cell">
+              <p class="readout-label" data-i18n="readout-gpax-label">GPAX สะสม</p>
+              <p class="readout-value mono">3.89</p>
+            </div>
+            <div class="readout-cell">
+              <p class="readout-label">Enterprise UX</p>
+              <p class="readout-value">113<span class="unit" data-i18n="readout-screens-unit">หน้าจอ</span></p>
+            </div>
+            <div class="readout-cell">
+              <p class="readout-label">IoT Prototype</p>
+              <p class="readout-value">฿1,262</p>
+            </div>
+            <div class="readout-cell">
+              <p class="readout-label" data-i18n="readout-projects-label">ผลงานทั้งหมด</p>
+              <p class="readout-value">7<span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
+            </div>
+          </div>
+        </div><!-- /hero-left -->
+
+        <div class="hero-photo">
+          <img src="https://i.imgur.com/3Z38He8.png" alt="โกศัลย์ พงษ์ธนู" data-i18n-alt="hero-photo-alt">
+        </div>
+
+      </div><!-- /hero-inner -->
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <p data-i18n="intro-p1">เริ่มจากการเปิดร้านหม่าล่าทอดเล็กๆ ชื่อ <strong>เสม &amp; Friends</strong> แล้วพบว่าไม่มีระบบไหนช่วยคำนวณกำไร ขาดทุนได้ตรงกับการขายแบบที่ร้านทำจริง ผมเลยสร้างมันขึ้นมาเอง เว็บแอปที่เชื่อมต่อ Google Sheets เป็นฐานข้อมูล ใช้บันทึกยอดขายและต้นทุนวัตถุดิบทุกวัน</p>
+        <p data-i18n="intro-p2">จุดนั้นกลายเป็นจุดเริ่มต้นที่ทำให้รู้ว่าตัวเองชอบงานที่ได้ <strong>ออกแบบ เขียนโค้ด และคิดเป็นธุรกิจไปพร้อมกัน</strong> ไม่ใช่แค่ทำตามโจทย์ แต่ลงมือแก้ปัญหาที่เจอจริงด้วยเครื่องมือที่เหมาะกับมัน</p>
+      </div>
+      <div class="intro-card">
+        <h4>Currently</h4>
+        <ul>
+          <li><span data-i18n="cur-edu-k">การศึกษา</span><span data-i18n="cur-edu-v">เทคโนโลยีสารสนเทศ, ม.กรุงเทพ</span></li>
+          <li><span data-i18n="cur-year-k">ปีที่เรียน</span><span data-i18n="cur-year-v">ปี 4</span></li>
+          <li><span data-i18n="cur-biz-k">ธุรกิจส่วนตัว</span><span>ร้านเสม &amp; Friends</span></li>
+          <li><span data-i18n="cur-role-k">สนใจตำแหน่ง</span><span>Junior UX/UI Designer & Marketing</span></li>
+          <li><span data-i18n="cur-loc-k">ที่อยู่</span><span data-i18n="cur-loc-v">กรุงเทพ, ประเทศไทย</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 class="section-title" data-i18n="work-title">ผลงาน</h2>
+        <p class="section-lede" data-i18n="work-lede">ทุกชิ้นด้านล่างคือของจริง ไม่ใช่โจทย์สมมุติ มีทั้งที่สร้างใช้เองและทำร่วมกับทีม</p>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="work-card featured">
+          <div class="work-media-row">
+            <div class="work-media">
+              <span class="work-id">PRJ-01</span>
+              <img loading="lazy" src="https://i.imgur.com/nl8zdcq.png" alt="หน้าจอระบบ POS และจัดการต้นทุน-กำไร ร้านเสม & Friends" data-i18n-alt="prj01-alt">
+            </div>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="tag t-self">Self-built</span>
+                <span class="tag t-skill">Google Apps Script</span>
+                <span class="tag t-skill">Google Sheets</span>
+              </div>
+              <h3 class="work-title" data-i18n="prj01-title">ระบบ POS และจัดการต้นทุน-กำไร</h3>
+              <p class="work-desc" data-i18n="prj01-desc">พัฒนาเว็บแอปสำหรับร้านเสม &amp; Friends (หม่าล่าทอด) ตั้งแต่หน้าบันทึกการขาย ไปจนถึงระบบบันทึกต้นทุนวัตถุดิบ เชื่อมต่อ Google Apps Script และ Google Sheets เป็นฐานข้อมูล พร้อมแดชบอร์ดแสดงยอดขาย กำไรสุทธิ และอันดับเมนูขายดีที่อัปเดตอัตโนมัติ ใช้งานจริงกับร้านทุกวัน</p>
+              <span class="work-link live-badge" style="color:var(--ok);font-weight:600;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;"></span><span class="live-text-th">ใช้งานจริงอยู่ในปัจจุบัน</span><span class="live-text-en" style="display:none;">Live in production</span></span>
+              <p class="work-link"><a class="demo-btn" href="https://lin.ee/NbLGjNs" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-02</span>
+            <img loading="lazy" src="https://i.imgur.com/bV2LlsD.png" alt="ระบบบริหารจัดการคลังวัสดุและครุภัณฑ์" data-i18n-alt="prj02-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-group">Senior Project</span>
+              <span class="tag t-group">Thaicom</span>
+              <span class="tag t-skill">Figma</span>
+              <span class="tag t-skill">PHP / Laravel</span>
+              <span class="tag t-skill">Oracle DB</span>
+            </div>
+            <h3 class="work-title" data-i18n="prj02-title">ระบบบริหารจัดการคลังวัสดุและครุภัณฑ์</h3>
+            <p class="work-desc" data-i18n="prj02-desc">ออกแบบ UX/UI และ Prototype ระบบระดับองค์กรกว่า 113 หน้าจอ ครอบคลุมการเบิก-รับ-โอน-จำหน่ายทรัพย์สินและระบบรายงาน พร้อมวาง Design System ที่เป็นมาตรฐาน พัฒนาในรูปแบบ Web Application สำหรับคลังส่วนกลางและภูมิภาค ด้วยเทคโนโลยี PHP, Laravel, CSS, JavaScript และ Oracle Database</p>
+            <span style="color:var(--warn);font-weight:600;display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--warn);display:inline-block;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;"></span><span class="wip-text-th">อยู่ระหว่างการพัฒนา</span><span class="wip-text-en" style="display:none;">In development</span></span>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-03</span>
+            <img loading="lazy" src="https://i.imgur.com/DW6DPbe.png" alt="ระบบการจัดการคลังยาและการขายสินค้า" data-i18n-alt="prj03-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-group">Group Project</span>
+              <span class="tag t-skill">Figma</span>
+              <span class="tag t-skill">PHP / MySQL</span>
+              <span class="tag t-skill">Bootstrap</span>
+            </div>
+            <h3 class="work-title" data-i18n="prj03-title">ระบบการจัดการคลังยาและการขายสินค้า</h3>
+            <p class="work-desc" data-i18n="prj03-desc">วิเคราะห์ ออกแบบ และพัฒนาระบบจัดการคลังยาแบบครบวงจร ครอบคลุมตั้งแต่การจัดการสต็อกสินค้า ทะเบียนลูกค้า บันทึกการขาย การจัดส่ง ไปจนถึงการออกรายงานสรุปยอดขายสำหรับผู้บริหาร พัฒนาด้วยเทคโนโลยี PHP, MySQL, HTML, CSS, Bootstrap, JavaScript, AJAX และ JSON</p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1aiqVZcouQzS3-REt94mSPIo7pJ-Vkpob/view?usp=sharing" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-04</span>
+            <img loading="lazy" src="https://i.imgur.com/wT90DYs.png" alt="กลยุทธ์การตลาดดิจิทัล ขนมไทยเกาะเกร็ด" data-i18n-alt="prj04-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-group">Group Project</span>
+              <span class="tag t-skill">Strategy</span>
+            </div>
+            <h3 class="work-title" data-i18n="prj04-title">กลยุทธ์การตลาดดิจิทัล: ขนมไทยเกาะเกร็ด</h3>
+            <p class="work-desc" data-i18n="prj04-desc">วิเคราะห์ Customer Persona และ Customer Journey ออกแบบกลยุทธ์ Omnichannel Marketing ครบ Funnel (TikTok, Instagram, Facebook, Shopee, LINE OA) พร้อมวางแผนแคมเปญและตัวชี้วัด KPI</p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1Us5Ym0IZf2rqKIuL6ME-67Fq8FqLiTlZ/view?usp=share_link" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-05</span>
+            <img loading="lazy" src="https://i.imgur.com/awVTbzY.png" alt="หน้าจอเว็บแดชบอร์ด Blue Light Detector" data-i18n-alt="prj05-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-group">Group Project</span>
+              <span class="tag t-skill">ESP32 / C++</span>
+            </div>
+            <h3 class="work-title">Blue Light Detector</h3>
+            <p class="work-desc" data-i18n="prj05-desc">พัฒนาโปรแกรมควบคุม ESP32-S3 อ่านค่าจากเซนเซอร์วัดระยะห่าง (VL53L0X) และความสว่าง (TSL2591) แสดงผลผ่านจอ OLED และเว็บแดชบอร์ดแบบเรียลไทม์ พร้อมจัดทำแผนธุรกิจเสนอขอทุนสนับสนุน</p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1R4iKf8BSUwJVgZql4eVHG2k-B8VTEgNj/view?usp=share_link" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-06</span>
+            <img loading="lazy" src="https://i.imgur.com/pizFHqh.png" alt="ภาพร่าง wireframe แอป Food for Everyone" data-i18n-alt="prj06-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-self">UX/UI</span>
+              <span class="tag t-skill">Wireframe</span>
+            </div>
+            <h3 class="work-title">Food for Everyone</h3>
+            <p class="work-desc" data-i18n="prj06-desc">ออกแบบ flow แอปสั่งอาหารแบบครบวงจร ตั้งแต่ onboarding, login, เลือกสินค้า, ตะกร้า ไปจนถึงระบบติดตามออเดอร์และโปรไฟล์ผู้ใช้</p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/xwuPYIFrSwVDrt4cBYSVok/projectcs100?node-id=0-1&t=JFXxs5YRxcnCp8G8-1" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-07</span>
+            <img loading="lazy" src="https://i.imgur.com/maQOCI3.jpeg" alt="หน้าจอเว็บไซต์สั่งอาหาร TUNGTUNGTUNGFOOD" data-i18n-alt="prj07-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-self">Self-built</span>
+              <span class="tag t-skill">HTML/CSS/JS</span>
+            </div>
+            <h3 class="work-title">TUNGTUNGTUNGFOOD</h3>
+            <p class="work-desc" data-i18n="prj07-desc">พัฒนาเว็บไซต์สั่งอาหารตั้งแต่หน้าเมนู ตะกร้าสินค้า ไปจนถึงระบบ Checkout ที่คำนวณราคาและยืนยันคำสั่งซื้อได้จริง ด้วย HTML, CSS, JavaScript และ Bootstrap</p>
+            <p class="work-link">
+              <a class="demo-btn" href="./web-food/index.html" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a>
+              <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/web-food1.git" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+            </p>
+          </div>
+        </article>
+
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-08</span>
+            <img loading="lazy" src="https://i.postimg.cc/hPd7gb88/Screenshot-2569-07-18-at-11-36-07.png" alt="หน้าจอเว็บแอป GALAXY Store" data-i18n-alt="prj09-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-self">Self-built</span>
+              <span class="tag t-skill">HTML/CSS/JS</span>
+            </div>
+            <h3 class="work-title">GALAXY Store</h3>
+            <p class="work-desc" data-i18n="prj09-desc">ออกแบบและพัฒนาเว็บไซต์ GALAXY Store สำหรับเปรียบเทียบอุปกรณ์อิเล็กทรอนิกส์และเครื่องใช้ไฟฟ้า ดีไซน์ระดับ Premium พร้อมระบบ Interactive UI ด้วย JavaScript</p>
+            <p class="work-link">
+              <a class="demo-btn" href="./galaxy-s26-compare/index.html" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a>
+              <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/galaxy-s26-compare" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-09</span>
+            <img loading="lazy" src="https://i.postimg.cc/hv7hDcmx/Screenshot-2569-07-18-at-11-43-56.png" alt="ภาพร่างและดีไซน์ Daily UI Challenge" data-i18n-alt="prj10-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-self">UX/UI</span>
+              <span class="tag t-skill">Figma</span>
+            </div>
+            <h3 class="work-title">Daily UI Challenge</h3>
+            <p class="work-desc" data-i18n="prj10-desc">ผลงานการออกแบบ UI รูปแบบต่างๆ เพื่อฝึกฝนทักษะด้าน UX/UI และการจัดวาง Layout ที่ทันสมัย ผ่านโจทย์รายวันใน Figma</p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/pgtVCKfQ1MaVd4QzS9G3fA/Daily-UI?node-id=0-1&t=gaJ4nEEjU3fEUWPs-1" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">TOOLKIT</p>
+        <h2 class="section-title" data-i18n="skills-title">ทักษะ</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Design & Media</h4>
+          <div class="skill-chips">
+            <span class="chip">Figma</span>
+            <span class="chip">Canva</span>
+            <span class="chip">Adobe Photoshop</span>
+            <span class="chip">Adobe Illustrator</span>
+            <span class="chip">Adobe Premiere Pro</span>
+            <span class="chip">CapCut</span>
+            <span class="chip">UX/UI Principles</span>
+            <span class="chip">Wireframing</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Web Development</h4>
+          <div class="skill-chips">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Bootstrap</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend / Data</h4>
+          <div class="skill-chips">
+            <span class="chip">Google Apps Script</span>
+            <span class="chip">Google Sheets API</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Laravel</span>
+            <span class="chip" data-i18n="chip-mysql">MySQL พื้นฐาน</span>
+            <span class="chip">UML / DFD</span>
+            <span class="chip">Oracle Database</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Hardware / IoT</h4>
+          <div class="skill-chips">
+            <span class="chip">C++ (Arduino/ESP32)</span>
+            <span class="chip">I2C Sensors</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Business / Marketing</h4>
+          <div class="skill-chips">
+            <span class="chip">Digital Marketing Strategy</span>
+            <span class="chip">LINE OA Management</span>
+            <span class="chip">Customer Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="background">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">BACKGROUND</p>
+        <h2 class="section-title" data-i18n="bg-title">ประสบการณ์และการศึกษา</h2>
+      </div>
+      <div class="bg-grid">
+        <div class="bg-col">
+          <h4 data-i18n="bg-work-h">ประสบการณ์ทำงาน</h4>
+          <div class="bg-item">
+            <p class="bg-role" data-i18n="bg-role-1">เจ้าของร้าน &amp; ผู้ดูแลการตลาดออนไลน์</p>
+            <p class="bg-org" data-i18n="bg-org-1">ร้านเสม &amp; Friends (หม่าล่าทอด)</p>
+            <p class="bg-meta" data-i18n="bg-meta-1">ปัจจุบัน</p>
+          </div>
+          <div class="bg-item">
+            <p class="bg-role" data-i18n="bg-role-2">พนักงานจัดออเดอร์ O2O (Part-time)</p>
+            <p class="bg-org">Makro (CP Axtra)</p>
+          </div>
+          <div class="bg-item">
+            <p class="bg-role" data-i18n="bg-role-3">พนักงานคีย์ข้อมูล (Part-time)</p>
+            <p class="bg-org">Thailand International Motor Expo</p>
+          </div>
+        </div>
+        <div class="bg-col">
+          <h4 data-i18n="bg-edu-h">การศึกษา</h4>
+          <div class="bg-item">
+            <p class="bg-role" data-i18n="bg-role-4">วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศ</p>
+            <p class="bg-org" data-i18n="bg-org-4">มหาวิทยาลัยกรุงเทพ คณะเทคโนโลยีสารสนเทศและนวัตกรรม</p>
+            <p class="bg-meta" data-i18n="bg-meta-4">GPAX 3.89 · คาดว่าจะจบ พฤษภาคม 2570</p>
+          </div>
+          <div class="bg-item">
+            <p class="bg-role" data-i18n="bg-role-5">มัธยมศึกษา สาขาศิลป์-คำนวณ</p>
+            <p class="bg-org" data-i18n="bg-org-5">โรงเรียนสวนกุหลาบวิทยาลัยชลบุรี</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications" style="background: var(--surface);">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">AWARDS & CERTS</p>
+        <h2 class="section-title" data-i18n="bg-cert-h">ใบรับรองและการฝึกอบรม</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+        
+        <div style="background: var(--paper); padding: 32px; border-radius: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s ease;">
+          <div style="flex: 1;">
+            <p class="bg-role" data-i18n="bg-cert-role-1" style="font-size: 18px; margin-bottom: 8px;">ด้านความมั่นคงปลอดภัยไซเบอร์ ระดับพื้นฐาน (Cybersecurity Foundation Course)</p>
+            <p class="bg-org" data-i18n="bg-cert-org-1">สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (NCSA)</p>
+            <p class="bg-meta" style="margin-bottom: 24px;" data-i18n="bg-cert-meta-1">มีนาคม 2569 · 21 ชั่วโมง (รหัสยืนยัน: 7554921935KP)</p>
+          </div>
+          <img loading="lazy" src="./ncsa-cert.png" alt="Cybersecurity Foundation Course Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); object-fit: contain; margin-top: auto;">
+        </div>
+
+        <div style="background: var(--paper); padding: 32px; border-radius: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s ease;">
+          <div style="flex: 1;">
+            <p class="bg-role" data-i18n="bg-cert-role-2" style="font-size: 18px; margin-bottom: 8px;">Claude 101 (Certificate of Completion)</p>
+            <p class="bg-org" data-i18n="bg-cert-org-2">Anthropic</p>
+            <p class="bg-meta" style="margin-bottom: 24px;" data-i18n="bg-cert-meta-2">2569</p>
+          </div>
+          <img loading="lazy" src="./claude-cert.png" alt="Claude 101 Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); object-fit: contain; background: #E6E1DC; margin-top: auto;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact section" id="contact">
+    <div class="wrap">
+      <h2 class="contact-title" data-i18n="contact-title">พร้อมเรียนรู้และลงมือทำ</h2>
+      <p class="contact-sub" data-i18n="contact-sub">สนใจฝึกงานตำแหน่ง Junior UX/UI Designer & Marketing หากองค์กรไหนสนใจ ยินดีส่งผลงานและพูดคุยเพิ่มเติมได้เลยครับ</p>
+      <div class="contact-row">
+        <a class="btn primary" href="mailto:kosalyphonsthnu@gmail.com" data-i18n="contact-email-btn">ส่งอีเมลถึงผม</a>
+        <a class="btn" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
+        <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
+        <a class="btn" href="tel:0641174443">064-117-4443</a>
+        <a class="btn" href="https://github.com/pooh23z" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/kosan-phongthanu" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="foot-bottom">
+        <span data-i18n="foot-signature">โกศัลย์ พงษ์ธนู — กรุงเทพ, ประเทศไทย</span>
+        <span>kosalyphonsthnu@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+      var original = new Map();
+      i18nEls.forEach(function (el) { original.set(el, el.innerHTML); });
+
+      var altEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-alt]'));
+      var originalAlt = new Map();
+      altEls.forEach(function (el) { originalAlt.set(el, el.getAttribute('alt')); });
+
+      var translations = {
+        'hero-name': 'Kosan Phongthanu',
+        'nav-name': 'KOSAN.PHONGTHANU',
+        'nav-work': 'Work',
+        'nav-skills': 'Skills',
+        'nav-background': 'Background',
+        'nav-certs': 'Certifications',
+        'nav-contact': 'Contact',
+        'readout-line-unit': '+ friends',
+        'readout-gpax-label': 'Cumulative GPA',
+        'readout-screens-unit': 'screens',
+        'readout-projects-label': 'Total Projects',
+        'readout-projects-unit': ' Projects',
+        'hero-sub': 'An IT student who builds real systems from real problems — from running his own food stall to a screen-brightness sensor, blending design, code, and business thinking into one.',
+        'intro-p1': 'It started with a small fried-mala stall called <strong>Sem &amp; Friends</strong> — and the realization that no system tracked profit and loss the way the shop actually sold things. So I built one myself: a web app connected to Google Sheets as the database, used to log daily sales and ingredient costs.',
+        'intro-p2': 'That became the moment I realized I love work that lets me <strong>design, code, and think like a business owner at the same time</strong> — not just complete assignments, but solve real problems with the right tools for the job.',
+        'cur-edu-k': 'Education',
+        'cur-edu-v': 'Information Technology, Bangkok University',
+        'cur-year-k': 'Year',
+        'cur-year-v': 'Year 4 (Senior)',
+        'cur-biz-k': 'Side Business',
+        'cur-role-k': 'Looking for',
+        'cur-loc-k': 'Address',
+        'cur-loc-v': 'Bangkok, Thailand',
+        'work-title': 'Selected Work',
+        'work-lede': "Everything below is real — not a class assignment scenario. Some built solo, some with a team.",
+        'prj01-title': 'POS & Cost/Profit Management System',
+        'prj01-desc': 'Built a web app for Sem & Friends (fried mala) — from the sales-entry screen to ingredient-cost tracking, connected to Google Apps Script and Google Sheets as the database, with a dashboard showing revenue, net profit, and best-selling items that updates automatically. In daily real-world use at the shop.',
+        'prj01-link': 'Live in production',
+        'prj01-alt': 'POS and cost/profit management system screen, Sem & Friends restaurant',
+        'prj02-title': 'Inventory & Asset Management System',
+        'prj02-desc': 'Designed UX/UI and prototypes for an enterprise-scale system spanning 113+ screens, covering requisition, receiving, transfer, and disposal of assets along with reporting. Established a standardized design system. Built as a web application for central and regional warehouses using PHP, Laravel, CSS, JavaScript, and Oracle Database.',
+        'prj02-alt': 'Inventory and asset management system screen',
+        'prj03-title': 'Pharmacy Inventory & Sales Management System',
+        'prj03-desc': 'Analyzed, designed, and built an end-to-end pharmacy inventory system — covering stock management, customer records, sales, delivery, and executive sales reports. Built with PHP, MySQL, HTML, CSS, Bootstrap, JavaScript, AJAX, and JSON.',
+        'prj03-alt': 'Pharmacy inventory and sales management system screen',
+        'demo-link': '↗ View Project',
+        'prj04-title': 'Digital Marketing Strategy: Koh Kret Thai Sweets',
+        'prj04-desc': 'Analyzed customer personas and customer journeys, then designed a full-funnel omnichannel marketing strategy (TikTok, Instagram, Facebook, Shopee, LINE OA) with campaign planning and KPI tracking.',
+        'prj04-alt': 'Digital marketing strategy for Koh Kret Thai sweets',
+        'prj05-desc': 'Programmed an ESP32-S3 to read distance (VL53L0X) and brightness (TSL2591) sensors, displaying results on an OLED screen and a real-time web dashboard. Also prepared a business plan to pitch for funding.',
+        'prj05-alt': 'Blue Light Detector web dashboard screen',
+        'prj06-desc': 'Designed the full flow for a food-ordering app — from onboarding and login to product selection, cart, order tracking, and user profile.',
+        'prj06-alt': 'Food for Everyone app wireframe',
+        'prj07-desc': 'Built a food-ordering website from the menu page and cart through to a working checkout that calculates totals and confirms orders, using HTML, CSS, JavaScript, and Bootstrap.',
+        'prj07-alt': 'TUNGTUNGTUNGFOOD food-ordering website screen',
+
+        'prj09-desc': 'Designed and developed the GALAXY Store website for comparing electronics and appliances. Features a premium design with interactive UI using JavaScript.',
+        'prj09-alt': 'GALAXY Store web app screen',
+        'prj10-desc': 'A collection of UI designs to practice UX/UI skills and modern layout composition through daily Figma challenges.',
+        'prj10-alt': 'Daily UI Challenge designs',
+        'skills-title': 'Skills',
+        'chip-mysql': 'MySQL Basics',
+        'bg-title': 'Experience & Education',
+        'bg-work-h': 'Work Experience',
+        'bg-role-1': 'Owner & Online Marketing Lead',
+        'bg-org-1': 'Sem & Friends (Fried Mala)',
+        'bg-meta-1': 'Present',
+        'bg-role-2': 'O2O Order Fulfillment Staff (Part-time)',
+        'bg-role-3': 'Data Entry Staff (Part-time)',
+        'bg-edu-h': 'Education',
+        'bg-cert-h': 'Certifications & Training',
+        'bg-cert-role-1': 'Cybersecurity Foundation Course',
+        'bg-cert-org-1': 'National Cyber Security Agency (NCSA)',
+        'bg-cert-meta-1': 'March 2026 · 21 hours (Verification: 7554921935KP)',
+        'bg-cert-role-2': 'Claude 101 (Certificate of Completion)',
+        'bg-cert-org-2': 'Anthropic',
+        'bg-cert-meta-2': '2026',
+        'bg-role-4': 'B.Sc. in Information Technology',
+        'bg-org-4': 'Bangkok University, Faculty of Information Technology and Innovation',
+        'bg-meta-4': 'GPA 3.89 · Expected graduation May 2027',
+        'bg-role-5': 'High School, Arts–Math Program',
+        'bg-org-5': 'Suankularb Wittayalai Chonburi School',
+        'contact-title': 'Ready to learn and build',
+        'contact-sub': "Looking for an internship opportunity as a Junior UX/UI Designer & Marketing. If you're interested, feel free to reach out — happy to share more work and have a chat.",
+        'contact-email-btn': 'Email me',
+        'btn-resume-th': '📄 View Resume (Thai)',
+        'btn-resume-en': '📄 View Resume (English)',
+        'foot-signature': 'Kosan Phongthanu — Bangkok, Thailand'
+      };
+
+      var altTranslations = {
+        'hero-photo-alt': 'Kosan Phongthanu',
+        'prj01-alt': translations['prj01-alt'],
+        'prj02-alt': translations['prj02-alt'],
+        'prj03-alt': translations['prj03-alt'],
+        'prj04-alt': translations['prj04-alt'],
+        'prj05-alt': translations['prj05-alt'],
+        'prj06-alt': translations['prj06-alt'],
+        'prj07-alt': translations['prj07-alt'],
+
+        'prj09-alt': translations['prj09-alt'],
+        'prj10-alt': translations['prj10-alt']
+      };
+
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-btn'));
+
+      function setLang(lang) {
+        var thBadge = document.querySelector('.live-text-th');
+        var enBadge = document.querySelector('.live-text-en');
+        if (thBadge && enBadge) {
+          thBadge.style.display = lang === 'en' ? 'none' : '';
+          enBadge.style.display = lang === 'en' ? '' : 'none';
+        }
+        var thWip = document.querySelector('.wip-text-th');
+        var enWip = document.querySelector('.wip-text-en');
+        if (thWip && enWip) {
+          thWip.style.display = lang === 'en' ? 'none' : '';
+          enWip.style.display = lang === 'en' ? '' : 'none';
+        }
+        i18nEls.forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          el.innerHTML = (lang === 'en' && translations[key]) ? translations[key] : original.get(el);
+        });
+        altEls.forEach(function (el) {
+          var key = el.getAttribute('data-i18n-alt');
+          el.setAttribute('alt', (lang === 'en' && altTranslations[key]) ? altTranslations[key] : originalAlt.get(el));
+        });
+        document.documentElement.setAttribute('lang', lang);
+        buttons.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+      });
+
+      // Scroll Animation (Fade up)
+      var observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      var sections = document.querySelectorAll('.section, .hero-inner');
+      sections.forEach(function(sec) {
+        sec.classList.add('fade-up');
+        observer.observe(sec);
+      });
+
+      // Back to Top Button
+      var backToTopBtn = document.createElement('button');
+      backToTopBtn.innerHTML = '↑';
+      backToTopBtn.className = 'back-to-top';
+      backToTopBtn.setAttribute('aria-label', 'Back to top');
+      document.body.appendChild(backToTopBtn);
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>

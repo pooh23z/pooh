@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kosan Phongthanu - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111827;
+      --slate: #4B5563;
+      --light-slate: #9CA3AF;
+      --bg: #FFFFFF;
+      --primary: #2563EB;
+      --border: #E5E7EB;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #F3F4F6;
+      color: var(--ink);
+      line-height: 1.4;
+      font-size: 12px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      background: var(--bg);
+      width: 210mm; /* A4 width */
+      height: 297mm; /* A4 height */
+      margin: 40px auto;
+      padding: 35px 45px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      overflow: hidden; /* Prevent spill over */
+    }
+
+    /* Print settings */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: none;
+      }
+      .page {
+        margin: 0 !important;
+        box-shadow: none;
+        padding: 25px 35px !important;
+        width: 210mm;
+        height: 297mm;
+        overflow: hidden;
+      }
+      .section {
+        margin-bottom: 12px !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .name-role h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .name-role h2 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 13px;
+      color: var(--slate);
+    }
+
+    .contact-info a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info div {
+      margin-bottom: 4px;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Grid for 2-column layout in skills/education if needed */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .item {
+      margin-bottom: 14px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .item-meta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate);
+    }
+
+    .item-date {
+      font-size: 12px;
+      color: var(--light-slate);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .item-desc {
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 18px;
+      color: var(--slate);
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+    }
+    
+    .tech-stack {
+      font-size: 13px;
+      color: var(--slate);
+      margin-top: 6px;
+    }
+    
+    .tech-stack strong {
+      color: var(--ink);
+    }
+
+    /* Skills */
+    .skills-category {
+      margin-bottom: 10px;
+    }
+    .skills-category strong {
+      display: inline-block;
+      width: 130px;
+      color: var(--ink);
+    }
+    .skills-category span {
+      color: var(--slate);
+    }
+
+    /* Floating Print Button */
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    }
+
+  </style>
+</head>
+<body>
+
+  <a class="print-btn no-print" href="resume.pdf" download style="text-decoration: none; display: inline-block;">⬇️ Download PDF</a>
+
+  <div class="page">
+    <header>
+      <div class="name-role">
+        <h1>Kosan Phongthanu</h1>
+        <h2>Junior UX/UI Designer & Marketing</h2>
+      </div>
+      <div class="contact-info">
+        <div>Bangkok, Thailand</div>
+        <div><a href="mailto:kosalyphonsthnu@gmail.com">kosalyphonsthnu@gmail.com</a> | 064-117-4443</div>
+        <div><a href="https://github.com/pooh23z" target="_blank">github.com/pooh23z</a></div>
+        <div><a href="https://www.linkedin.com/in/kosan-phongthanu" target="_blank">linkedin.com/in/kosan-phongthanu</a></div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="item-desc" style="margin-bottom: 0;">
+        An Information Technology senior student blending strong technical development skills with business acumen and UI/UX design thinking. Experienced in building end-to-end web applications that solve real-world operational problems. Seeking an internship opportunity to contribute to and learn from a dynamic development or design team.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Education</div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Bangkok University</div>
+          <div class="item-date">Expected Graduation: May 2027</div>
+        </div>
+        <div class="item-meta">B.Sc. in Information Technology</div>
+        <div class="item-desc">Cumulative GPA: 3.89</div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="section-title">Selected Projects</div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Enterprise Inventory & Asset Management System</div>
+          <div class="item-date">Senior Project · Thaicom</div>
+        </div>
+        <ul class="bullets">
+          <li>Designed comprehensive UX/UI and prototypes for an enterprise-scale system spanning 113+ screens.</li>
+          <li>Established a standardized UI design system for developers to ensure visual consistency.</li>
+          <li>Developed a web application covering asset requisition, transfer, disposal, and executive reporting.</li>
+        </ul>
+        <div class="tech-stack"><strong>Technologies:</strong> PHP, Laravel, HTML/CSS, JavaScript, Oracle Database, Figma</div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">POS & Cost/Profit Management System</div>
+          <div class="item-date">Sem & Friends (Live Production)</div>
+        </div>
+        <ul class="bullets">
+          <li>Built a bespoke Point-of-Sale and cost-tracking web application for a retail food business.</li>
+          <li>Engineered automated dashboards reflecting real-time revenue, net profit, and best-selling metrics.</li>
+          <li>Currently used in daily operations to optimize inventory ordering and financial tracking.</li>
+        </ul>
+        <div class="tech-stack"><strong>Technologies:</strong> Google Apps Script, Google Sheets API, HTML/CSS, JavaScript</div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Modern Web Applications (TUNGTUNGTUNGFOOD & GALAXY Store)</div>
+          <div class="item-date">Personal Projects</div>
+        </div>
+        <ul class="bullets">
+          <li>Developed responsive front-end interfaces prioritizing modern aesthetics and micro-animations.</li>
+          <li>Implemented interactive UI components and dynamic data rendering purely with Vanilla JavaScript.</li>
+        </ul>
+        <div class="tech-stack"><strong>Technologies:</strong> HTML5, CSS3, Vanilla JS</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Work Experience</div>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Owner & Online Marketing Lead</div>
+          <div class="item-date">Present</div>
+        </div>
+        <div class="item-meta">Sem & Friends (Fried Mala)</div>
+        <ul class="bullets">
+          <li>Manage end-to-end daily business operations, inventory, and customer relations.</li>
+          <li>Drive online presence and promotional campaigns via LINE OA and social media channels.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Skills</div>
+      <div class="skills-category">
+        <strong>Web Development:</strong> <span>HTML5, CSS3, JavaScript, PHP, Laravel, Bootstrap</span>
+      </div>
+      <div class="skills-category">
+        <strong>Design & Media:</strong> <span>Figma, Canva, Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, CapCut, Wireframing</span>
+      </div>
+      <div class="skills-category">
+        <strong>Database & Tools:</strong> <span>MySQL, Oracle DB, Google Apps Script, UML/DFD</span>
+      </div>
+      <div class="skills-category">
+        <strong>Other Skills:</strong> <span>Digital Marketing, C++ (ESP32/Arduino), Hardware Integration</span>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
