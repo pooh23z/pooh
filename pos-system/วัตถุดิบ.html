@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ค่าวัตถุดิบ — หม่าล่าทอด</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --coal: #1c1008;
+  --deep: #120b04;
+  --ember: #c0390b;
+  --ember2: #d44010;
+  --ash: #f5f0ea;
+  --faint: #b8a898;
+  --orange: #e8903a;
+  --green: #4caf6e;
+  --white: #fffefb;
+  --card: rgba(255,255,255,0.038);
+  --border: rgba(255,255,255,0.07);
+  --radius: 20px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Sarabun', sans-serif;
+  background: var(--coal);
+  color: var(--ash);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HEADER ─── */
+header {
+  padding: 40px 24px 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.brand-icon { font-size: 42px; display: block; margin-bottom: 10px; }
+.brand-name { font-family: 'Noto Serif Thai', serif; font-size: 26px; font-weight: 700; color: var(--white); display: block; }
+.brand-sub { font-size: 11px; color: var(--faint); letter-spacing: .2em; text-transform: uppercase; margin-top: 4px; display: block; }
+.conn-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 14px; padding: 5px 14px; border-radius: 99px;
+  border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04);
+  font-size: 12px; color: var(--faint); cursor: pointer; transition: all .2s;
+}
+.conn-pill:hover { border-color: rgba(255,255,255,.22); color: var(--ash); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #444; transition: all .3s; }
+.dot.on { background: var(--green); box-shadow: 0 0 0 3px rgba(76,175,110,.25); }
+
+/* ─── TABS ─── */
+.tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+  background: var(--coal);
+}
+.tab {
+  flex: 1; padding: 13px 8px; text-align: center;
+  font-size: 13px; font-weight: 500; color: var(--faint);
+  cursor: pointer; border-bottom: 2px solid transparent;
+  transition: all .2s; background: none; border-left: none; border-right: none; border-top: none;
+  font-family: 'Sarabun', sans-serif;
+}
+.tab.active { color: var(--white); border-bottom-color: var(--ember); }
+.tab:hover:not(.active) { color: var(--ash); }
+
+/* ─── WRAPPER ─── */
+.wrapper { max-width: 480px; margin: 0 auto; padding: 20px 16px 100px; }
+.page { display: none; }
+.page.active { display: block; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── SETUP ─── */
+.setup-box {
+  background: rgba(212,137,26,.1); border: 1px solid rgba(212,137,26,.25);
+  border-radius: 12px; padding: 13px 16px; font-size: 13px; color: #e8b96a;
+  margin-bottom: 18px; display: flex; gap: 8px;
+}
+.setup-box.hidden { display: none; }
+.config-panel {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px; padding: 20px; margin-bottom: 18px; display: none;
+}
+.config-panel.open { display: block; animation: slideDown .2s ease; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── CARD ─── */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 18px; margin-bottom: 14px;
+}
+.card-label {
+  font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.card-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.06); }
+
+/* ─── ROUND SELECTOR ─── */
+.round-row {
+  display: flex; gap: 8px; align-items: center; margin-bottom: 16px;
+}
+.round-select {
+  flex: 1; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px; padding: 10px 12px; font-family: 'Sarabun', sans-serif;
+  font-size: 14px; color: var(--white); outline: none; transition: all .2s;
+  appearance: none; cursor: pointer;
+}
+.round-select:focus { border-color: rgba(192,57,11,.5); box-shadow: 0 0 0 3px rgba(192,57,11,.1); }
+.round-select option { background: #2a1a0e; color: var(--ash); }
+.btn-new-round {
+  padding: 10px 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px; font-family: 'Sarabun', sans-serif; font-size: 13px;
+  color: var(--ash); cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.btn-new-round:hover { background: rgba(255,255,255,.12); }
+
+/* ─── FORM ─── */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.form-grid.full { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label, .lbl {
+  font-size: 10px; font-weight: 600; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--faint);
+}
+input[type=text], input[type=number] {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px; padding: 11px 13px; font-family: 'Sarabun', sans-serif;
+  font-size: 15px; color: var(--white); outline: none; width: 100%; transition: all .2s;
+}
+input[type=number] { font-family: 'Noto Serif Thai', serif; font-size: 18px; font-weight: 600; text-align: center; -moz-appearance: textfield; }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input::placeholder { color: rgba(255,255,255,.15); }
+input:focus { border-color: rgba(192,57,11,.5); background: rgba(192,57,11,.06); box-shadow: 0 0 0 3px rgba(192,57,11,.1); }
+
+/* ─── TOTAL PREVIEW ─── */
+.total-preview {
+  background: rgba(232,144,58,.08); border: 1px solid rgba(232,144,58,.2);
+  border-radius: 12px; padding: 12px 16px; margin: 10px 0 14px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.total-preview-label { font-size: 12px; color: var(--faint); }
+.total-preview-val { font-family: 'Noto Serif Thai', serif; font-size: 22px; font-weight: 700; color: var(--orange); }
+
+/* ─── SLIP UPLOAD ─── */
+.slip-zone {
+  border: 1.5px dashed rgba(255,255,255,.15); border-radius: 12px;
+  padding: 20px; text-align: center; cursor: pointer;
+  transition: all .2s; position: relative; margin-bottom: 14px;
+}
+.slip-zone:hover { border-color: rgba(192,57,11,.4); background: rgba(192,57,11,.04); }
+.slip-zone.has-file { border-color: rgba(76,175,110,.4); background: rgba(76,175,110,.04); }
+.slip-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.slip-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+.slip-label { font-size: 13px; color: var(--faint); }
+.slip-preview { max-width: 100%; max-height: 180px; border-radius: 10px; margin-top: 10px; display: none; object-fit: contain; }
+
+/* ─── BUTTONS ─── */
+.btn-submit {
+  width: 100%; padding: 15px; background: var(--ember); border: none;
+  border-radius: 14px; font-family: 'Noto Serif Thai', serif;
+  font-size: 17px; font-weight: 600; color: white; cursor: pointer; transition: all .2s;
+}
+.btn-submit:hover { background: var(--ember2); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,57,11,.35); }
+.btn-submit:active { transform: none; box-shadow: none; }
+.btn-submit:disabled { background: rgba(255,255,255,.08); color: rgba(255,255,255,.25); cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-clear { background: none; border: none; font-family: 'Sarabun', sans-serif; font-size: 12px; color: var(--faint); cursor: pointer; padding: 10px 0 0; display: block; margin: 0 auto; transition: color .2s; }
+.btn-clear:hover { color: var(--ash); }
+.btn-sm {
+  padding: 9px 16px; border-radius: 9px; font-family: 'Sarabun', sans-serif;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.06); color: var(--ash); transition: all .15s;
+}
+.btn-sm:hover { background: rgba(255,255,255,.12); }
+.btn-sm.primary { background: var(--white); color: var(--coal); border-color: transparent; }
+.btn-sm.primary:hover { background: var(--ash); }
+.btn-row { display: flex; gap: 8px; }
+
+/* ─── SUMMARY ─── */
+.summary-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;
+}
+.btn-refresh {
+  background: none; border: 1px solid rgba(255,255,255,.1); border-radius: 8px;
+  padding: 5px 12px; font-size: 12px; color: var(--faint); cursor: pointer;
+  font-family: 'Sarabun', sans-serif; transition: all .2s; display: flex; align-items: center; gap: 5px;
+}
+.btn-refresh:hover { border-color: rgba(255,255,255,.25); color: var(--ash); }
+.spin { display: inline-block; animation: spin .8s linear infinite; }
+@keyframes spin { to{transform:rotate(360deg)} }
+
+.round-card {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px; padding: 16px; margin-bottom: 10px;
+  cursor: pointer; transition: all .2s;
+}
+.round-card:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+.round-card.open { border-color: rgba(192,57,11,.3); }
+.round-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.round-name { font-size: 15px; font-weight: 500; color: var(--white); }
+.round-meta { font-size: 12px; color: var(--faint); margin-top: 2px; }
+.round-total { font-family: 'Noto Serif Thai', serif; font-size: 20px; font-weight: 700; color: var(--orange); text-align: right; }
+.round-total-lbl { font-size: 11px; color: var(--faint); text-align: right; }
+.round-items { margin-top: 14px; display: none; border-top: 1px solid rgba(255,255,255,.06); padding-top: 12px; }
+.round-card.open .round-items { display: block; }
+.item-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.04);
+  font-size: 13px;
+}
+.item-row:last-child { border-bottom: none; padding-bottom: 0; }
+.item-name { color: var(--white); font-weight: 500; }
+.item-meta { font-size: 11px; color: var(--faint); margin-top: 2px; }
+.item-note { font-size: 11px; color: rgba(232,144,58,.7); margin-top: 2px; }
+.item-total { font-family: 'Noto Serif Thai', serif; font-size: 15px; font-weight: 600; color: var(--orange); text-align: right; white-space: nowrap; margin-left: 12px; }
+.slip-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: rgba(76,175,110,.8); text-decoration: none; margin-top: 2px; }
+.slip-link:hover { color: var(--green); }
+.empty-state { text-align: center; padding: 28px 0; color: var(--faint); font-size: 13px; }
+.empty-icon { font-size: 32px; display: block; margin-bottom: 8px; opacity: .35; }
+
+/* ─── MODAL ─── */
+.modal-bg {
+  position: fixed; inset: 0; background: rgba(0,0,0,.7);
+  z-index: 200; display: flex; align-items: center; justify-content: center;
+  padding: 20px; display: none;
+}
+.modal-bg.open { display: flex; animation: fadeIn .2s ease; }
+.modal {
+  background: #2a1a0e; border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px; padding: 24px; width: 100%; max-width: 400px;
+}
+.modal-title { font-family: 'Noto Serif Thai', serif; font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 16px; }
+.modal-actions { display: flex; gap: 8px; margin-top: 16px; }
+
+/* ─── TOAST ─── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(70px);
+  background: var(--white); color: var(--coal);
+  padding: 12px 24px; border-radius: 99px;
+  font-size: 14px; font-weight: 500; z-index: 999;
+  transition: transform .35s cubic-bezier(0.34,1.56,0.64,1);
+  white-space: nowrap; box-shadow: 0 8px 32px rgba(0,0,0,.5); pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ─── GRAND TOTAL ─── */
+.grand-total-card {
+  background: linear-gradient(135deg, rgba(192,57,11,.15), rgba(232,144,58,.08));
+  border: 1px solid rgba(192,57,11,.25); border-radius: 16px;
+  padding: 18px 20px; margin-bottom: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.grand-label { font-size: 13px; color: var(--faint); margin-bottom: 2px; }
+.grand-val { font-family: 'Noto Serif Thai', serif; font-size: 28px; font-weight: 700; color: var(--orange); }
+.grand-count { font-size: 12px; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand-icon">🧾</span>
+  <span class="brand-name">ค่าวัตถุดิบ</span>
+  <span class="brand-sub">หม่าล่าทอด — บันทึกรายจ่าย</span><br>
+  <div class="conn-pill" onclick="toggleConfig()">
+    <div class="dot" id="conn-dot"></div>
+    <span id="conn-text">เชื่อมต่อ Google Sheets</span>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('add')">➕ บันทึกรายการ</button>
+  <button class="tab" onclick="switchTab('summary')">📊 สรุปแต่ละรอบ</button>
+</div>
+
+<div class="wrapper">
+
+  <div class="setup-box" id="setup-banner">
+    <span>⚠️</span>
+    <span>กด "เชื่อมต่อ Google Sheets" ด้านบนเพื่อใส่ Script URL ก่อนนะคะ</span>
+  </div>
+
+  <div class="config-panel" id="config-panel">
+    <p class="card-label">ตั้งค่าเชื่อมต่อ</p>
+    <div style="margin-bottom:12px">
+      <label class="lbl" style="display:block;margin-bottom:6px">Apps Script Web App URL (ตัวใหม่)</label>
+      <input type="text" id="script-url" placeholder="https://script.google.com/macros/s/.../exec" />
+    </div>
+    <div class="btn-row">
+      <button class="btn-sm primary" onclick="saveConfig()">บันทึก</button>
+      <button class="btn-sm" onclick="testConn()">ทดสอบ</button>
+    </div>
+  </div>
+
+  <!-- ─── PAGE: ADD ─── -->
+  <div class="page active" id="page-add">
+
+    <div class="card">
+      <p class="card-label">เลือกรอบการซื้อ</p>
+      <div class="round-row">
+        <select class="round-select" id="round-select">
+          <option value="">— เลือกรอบ หรือสร้างใหม่ —</option>
+        </select>
+        <button class="btn-new-round" onclick="openNewRound()">+ รอบใหม่</button>
+      </div>
+      <div id="selected-round-info" style="font-size:12px;color:var(--faint);display:none">
+        📦 รอบที่เลือก: <span id="round-display" style="color:var(--ash)"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-label">รายละเอียดวัตถุดิบ</p>
+      <div class="form-grid full" style="margin-bottom:10px">
+        <div class="field">
+          <label>ชื่อรายการ *</label>
+          <input type="text" id="f-name" placeholder="เช่น หม่าล่า, เต้าหู้, ไส้กรอก" />
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>จำนวน *</label>
+          <input type="number" id="f-qty" placeholder="0" min="0" step="0.1" oninput="calcTotal()" />
+        </div>
+        <div class="field">
+          <label>ราคา/หน่วย (฿) *</label>
+          <input type="number" id="f-price" placeholder="0" min="0" oninput="calcTotal()" />
+        </div>
+      </div>
+
+      <div class="total-preview">
+        <span class="total-preview-label">รวมทั้งสิ้น</span>
+        <span class="total-preview-val" id="total-preview">฿0</span>
+      </div>
+
+      <div class="form-grid full" style="margin-bottom:10px">
+        <div class="field">
+          <label>หมายเหตุ</label>
+          <input type="text" id="f-note" placeholder="เช่น ซื้อจาก Makro, แพ็ค 1 กก." />
+        </div>
+      </div>
+
+      <!-- SLIP UPLOAD -->
+      <label class="lbl" style="display:block;margin-bottom:8px">สลิป / ใบเสร็จ</label>
+      <div class="slip-zone" id="slip-zone" onclick="document.getElementById('slip-file').click()">
+        <input type="file" id="slip-file" accept="image/*" onchange="handleSlip(event)" style="display:none" />
+        <span class="slip-icon" id="slip-icon">📎</span>
+        <p class="slip-label" id="slip-label">แตะเพื่ออัปโหลดสลิป</p>
+        <p style="font-size:11px;color:var(--faint);margin-top:3px">รองรับ JPG, PNG</p>
+        <img id="slip-preview" class="slip-preview" alt="slip preview" />
+      </div>
+
+      <button class="btn-submit" id="submit-btn" onclick="submitItem()">บันทึกรายการ</button>
+      <button class="btn-clear" onclick="clearForm()">ล้างฟอร์ม</button>
+    </div>
+
+  </div>
+
+  <!-- ─── PAGE: SUMMARY ─── -->
+  <div class="page" id="page-summary">
+
+    <div class="summary-header">
+      <p class="card-label" style="margin:0">รอบการซื้อทั้งหมด</p>
+      <button class="btn-refresh" onclick="loadSummary()">
+        <span id="refresh-icon">↻</span> รีเฟรช
+      </button>
+    </div>
+
+    <div id="grand-total-wrap"></div>
+    <div id="rounds-list">
+      <div class="empty-state">
+        <span class="empty-icon">🛒</span>
+        ยังไม่มีข้อมูล — กดรีเฟรชหรือบันทึกรายการก่อนค่ะ
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ─── MODAL: NEW ROUND ─── -->
+<div class="modal-bg" id="modal-round">
+  <div class="modal">
+    <p class="modal-title">สร้างรอบใหม่</p>
+    <div class="field" style="margin-bottom:14px">
+      <label>ชื่อรอบ</label>
+      <input type="text" id="new-round-name" placeholder="เช่น รอบ 1, ตลาดสด 20 พ.ค., รอบเช้า" />
+    </div>
+    <p style="font-size:12px;color:var(--faint);margin-bottom:14px">หรือใช้วันที่วันนี้:</p>
+    <div class="btn-row" style="margin-bottom:14px">
+      <button class="btn-sm" onclick="setRoundToday()">📅 วันนี้</button>
+      <button class="btn-sm" onclick="setRoundWeek()">📆 สัปดาห์นี้</button>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-sm primary" onclick="confirmNewRound()">สร้างรอบ</button>
+      <button class="btn-sm" onclick="closeModal()">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let cfg = { url: '' };
+let rounds = [];
+let slipBase64 = null;
+let slipMime = null;
+let slipName = null;
+
+function init() {
+  try {
+    const s = localStorage.getItem('mala_ingredient_cfg');
+    if (s) cfg = JSON.parse(s);
+  } catch(e) {}
+  if (cfg.url) {
+    document.getElementById('script-url').value = cfg.url;
+    setConn(true);
+    loadRoundsForSelect();
+  }
+}
+
+function toggleConfig() {
+  document.getElementById('config-panel').classList.toggle('open');
+}
+
+function saveConfig() {
+  cfg.url = document.getElementById('script-url').value.trim();
+  try { localStorage.setItem('mala_ingredient_cfg', JSON.stringify(cfg)); } catch(e) {}
+  if (cfg.url) {
+    setConn(true);
+    toast('✅ บันทึกแล้วค่ะ');
+    document.getElementById('config-panel').classList.remove('open');
+    loadRoundsForSelect();
+  } else {
+    toast('⚠️ ใส่ URL ก่อนนะคะ');
+  }
+}
+
+function testConn() {
+  if (!cfg.url) { toast('⚠️ ยังไม่มี URL'); return; }
+  toast('📡 กำลังทดสอบ...');
+  fetch(cfg.url + '?action=getRounds')
+    .then(r => r.json())
+    .then(d => { toast('✅ เชื่อมต่อได้ค่ะ'); setConn(true); })
+    .catch(e => toast('❌ ไม่ได้: ' + e.message));
+}
+
+function setConn(ok) {
+  document.getElementById('conn-dot').className = 'dot' + (ok ? ' on' : '');
+  document.getElementById('conn-text').textContent = ok ? 'เชื่อมต่อแล้ว ✓' : 'เชื่อมต่อ Google Sheets';
+  document.getElementById('setup-banner').classList.toggle('hidden', ok);
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', (i===0&&name==='add')||(i===1&&name==='summary')));
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (name === 'summary') loadSummary();
+}
+
+// ─── ROUND ───
+async function loadRoundsForSelect() {
+  if (!cfg.url) return;
+  try {
+    const res = await fetch(cfg.url + '?action=getRounds');
+    const d = await res.json();
+    rounds = d.rounds || [];
+    const sel = document.getElementById('round-select');
+    const cur = sel.value;
+    sel.innerHTML = '<option value="">— เลือกรอบ หรือสร้างใหม่ —</option>';
+    rounds.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r.name;
+      opt.textContent = r.name + ' (' + r.count + ' รายการ · ฿' + Number(r.total).toLocaleString() + ')';
+      sel.appendChild(opt);
+    });
+    if (cur) sel.value = cur;
+  } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('round-select').addEventListener('change', function() {
+    const v = this.value;
+    if (v) {
+      document.getElementById('selected-round-info').style.display = 'block';
+      document.getElementById('round-display').textContent = v;
+    } else {
+      document.getElementById('selected-round-info').style.display = 'none';
+    }
+  });
+});
+
+function openNewRound() { document.getElementById('modal-round').classList.add('open'); }
+function closeModal() { document.getElementById('modal-round').classList.remove('open'); }
+
+function setRoundToday() {
+  const d = new Date().toLocaleDateString('th-TH', { day:'2-digit', month:'2-digit', year:'numeric' });
+  document.getElementById('new-round-name').value = 'รอบ ' + d;
+}
+function setRoundWeek() {
+  const now = new Date();
+  const week = getWeekNumber(now);
+  document.getElementById('new-round-name').value = 'สัปดาห์ที่ ' + week;
+}
+function getWeekNumber(d) {
+  const onejan = new Date(d.getFullYear(), 0, 1);
+  return Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}
+
+function confirmNewRound() {
+  const name = document.getElementById('new-round-name').value.trim();
+  if (!name) { toast('⚠️ ใส่ชื่อรอบด้วยนะคะ'); return; }
+  const sel = document.getElementById('round-select');
+  let found = false;
+  for (let opt of sel.options) { if (opt.value === name) { found = true; break; } }
+  if (!found) {
+    const opt = document.createElement('option');
+    opt.value = name; opt.textContent = name + ' (ใหม่)';
+    sel.appendChild(opt);
+  }
+  sel.value = name;
+  document.getElementById('selected-round-info').style.display = 'block';
+  document.getElementById('round-display').textContent = name;
+  closeModal();
+  toast('✅ รอบ "' + name + '" พร้อมแล้วค่ะ');
+}
+
+// ─── SLIP ───
+function handleSlip(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  slipMime = file.type;
+  slipName = file.name;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const result = ev.target.result;
+    slipBase64 = result.split(',')[1];
+    const preview = document.getElementById('slip-preview');
+    preview.src = result;
+    preview.style.display = 'block';
+    document.getElementById('slip-icon').textContent = '✅';
+    document.getElementById('slip-label').textContent = file.name;
+    document.getElementById('slip-zone').classList.add('has-file');
+  };
+  reader.readAsDataURL(file);
+}
+
+// ─── CALC ───
+function calcTotal() {
+  const qty = parseFloat(document.getElementById('f-qty').value) || 0;
+  const price = parseFloat(document.getElementById('f-price').value) || 0;
+  document.getElementById('total-preview').textContent = '฿' + (qty * price).toLocaleString(undefined, {minimumFractionDigits:0, maximumFractionDigits:2});
+}
+
+// ─── SUBMIT ───
+async function submitItem() {
+  const round = document.getElementById('round-select').value;
+  const name = document.getElementById('f-name').value.trim();
+  const qty = parseFloat(document.getElementById('f-qty').value);
+  const price = parseFloat(document.getElementById('f-price').value);
+  const note = document.getElementById('f-note').value.trim();
+
+  if (!round) { toast('⚠️ เลือกรอบก่อนนะคะ'); return; }
+  if (!name) { toast('⚠️ ใส่ชื่อรายการด้วยค่ะ'); return; }
+  if (!qty || qty <= 0) { toast('⚠️ ใส่จำนวนด้วยค่ะ'); return; }
+  if (!price || price < 0) { toast('⚠️ ใส่ราคาด้วยค่ะ'); return; }
+  if (!cfg.url) { toast('⚠️ ยังไม่ได้ตั้งค่า URL'); return; }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'กำลังส่ง...';
+
+  const payload = { action: 'addItem', round, name, qty, price, note, slipBase64: slipBase64 || '', slipMime: slipMime || '', slipName: slipName || '' };
+
+  try {
+    await fetch(cfg.url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    toast('✅ บันทึก "' + name + '" แล้วค่ะ · ฿' + (qty*price).toLocaleString());
+    clearForm();
+    setTimeout(loadRoundsForSelect, 1500);
+  } catch(e) {
+    toast('❌ ส่งไม่ได้: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'บันทึกรายการ';
+  }
+}
+
+function clearForm() {
+  ['f-name','f-qty','f-price','f-note'].forEach(id => document.getElementById(id).value = '');
+  slipBase64 = null; slipMime = null; slipName = null;
+  document.getElementById('slip-preview').style.display = 'none';
+  document.getElementById('slip-preview').src = '';
+  document.getElementById('slip-icon').textContent = '📎';
+  document.getElementById('slip-label').textContent = 'แตะเพื่ออัปโหลดสลิป';
+  document.getElementById('slip-zone').classList.remove('has-file');
+  document.getElementById('slip-file').value = '';
+  document.getElementById('total-preview').textContent = '฿0';
+}
+
+// ─── SUMMARY ───
+async function loadSummary() {
+  if (!cfg.url) { toast('⚠️ ยังไม่ได้ตั้งค่า URL'); return; }
+  const icon = document.getElementById('refresh-icon');
+  icon.innerHTML = '<span class="spin">↻</span>';
+
+  try {
+    const res = await fetch(cfg.url + '?action=getRounds');
+    const d = await res.json();
+    rounds = d.rounds || [];
+    renderSummary();
+    setConn(true);
+  } catch(e) {
+    toast('❌ โหลดไม่ได้: ' + e.message);
+  } finally {
+    icon.textContent = '↻';
+  }
+}
+
+function renderSummary() {
+  const grandTotal = rounds.reduce((s,r) => s + Number(r.total), 0);
+  const grandCount = rounds.reduce((s,r) => s + Number(r.count), 0);
+
+  document.getElementById('grand-total-wrap').innerHTML = rounds.length ? `
+    <div class="grand-total-card">
+      <div>
+        <p class="grand-label">รายจ่ายทั้งหมด</p>
+        <p class="grand-val">฿${grandTotal.toLocaleString(undefined, {minimumFractionDigits:0, maximumFractionDigits:2})}</p>
+      </div>
+      <div style="text-align:right">
+        <p class="grand-count">${rounds.length} รอบ</p>
+        <p class="grand-count">${grandCount} รายการ</p>
+      </div>
+    </div>` : '';
+
+  if (!rounds.length) {
+    document.getElementById('rounds-list').innerHTML = '<div class="empty-state"><span class="empty-icon">🛒</span>ยังไม่มีข้อมูลค่ะ</div>';
+    return;
+  }
+
+  document.getElementById('rounds-list').innerHTML = rounds.map((r,i) => `
+    <div class="round-card" id="rc-${i}" onclick="toggleRound(${i}, '${r.name.replace(/'/g,"\\'")}')">
+      <div class="round-top">
+        <div>
+          <p class="round-name">📦 ${r.name}</p>
+          <p class="round-meta">${r.count} รายการ · ${r.updated}</p>
+        </div>
+        <div>
+          <p class="round-total">฿${Number(r.total).toLocaleString(undefined, {minimumFractionDigits:0, maximumFractionDigits:2})}</p>
+          <p class="round-total-lbl">รวมทั้งรอบ</p>
+        </div>
+      </div>
+      <div class="round-items" id="ri-${i}">
+        <div style="font-size:12px;color:var(--faint);text-align:center;padding:8px 0">กำลังโหลด...</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function toggleRound(idx, roundName) {
+  const card = document.getElementById('rc-' + idx);
+  const items = document.getElementById('ri-' + idx);
+  const isOpen = card.classList.contains('open');
+  card.classList.toggle('open');
+  if (!isOpen && cfg.url) {
+    try {
+      const res = await fetch(cfg.url + '?action=getItems&round=' + encodeURIComponent(roundName));
+      const d = await res.json();
+      const list = d.items || [];
+      if (!list.length) {
+        items.innerHTML = '<div style="font-size:12px;color:var(--faint);text-align:center;padding:8px 0">ไม่มีรายการในรอบนี้</div>';
+        return;
+      }
+      items.innerHTML = list.map(it => `
+        <div class="item-row">
+          <div>
+            <p class="item-name">${it.name}</p>
+            <p class="item-meta">${it.qty} หน่วย × ฿${Number(it.price).toLocaleString()} / หน่วย</p>
+            ${it.note ? `<p class="item-note">💬 ${it.note}</p>` : ''}
+            ${it.slipUrl ? `<a href="${it.slipUrl}" target="_blank" class="slip-link">🧾 ดูสลิป</a>` : ''}
+          </div>
+          <div class="item-total">฿${Number(it.total).toLocaleString(undefined, {minimumFractionDigits:0, maximumFractionDigits:2})}</div>
+        </div>
+      `).join('');
+    } catch(e) {
+      items.innerHTML = '<div style="font-size:12px;color:var(--faint);padding:8px 0">โหลดไม่ได้ค่ะ</div>';
+    }
+  }
+}
+
+let _tt;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(_tt);
+  _tt = setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+init();
+</script>
+</body>
+</html>

@@ -480,6 +480,26 @@
       background: var(--warn);
     }
 
+    .tag.t-senior {
+      background: #374151;
+      color: #F9FAFB;
+    }
+
+    .tag.t-senior::before {
+      background: #9CA3AF;
+    }
+
+    .tag.t-corp {
+      background: #111827;
+      color: #F9FAFB;
+      font-weight: 600;
+      border: 1px solid #374151;
+    }
+
+    .tag.t-corp::before {
+      display: none;
+    }
+
     .tag.t-skill {
       background: var(--signal-soft);
       color: var(--signal);
@@ -518,28 +538,39 @@
       font-size: 12.5px;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--signal);
-      background: var(--signal-soft);
-      border: 1px solid transparent;
+      color: var(--ink);
+      background: #FFFFFF;
+      border: 1px solid var(--ink);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 9px 16px;
-      border-radius: 20px;
-      transition: background .15s, color .15s, transform .15s, gap .15s, box-shadow .15s;
+      padding: 9px 18px;
+      border-radius: 24px;
+      transition: background .2s, color .2s, transform .2s, box-shadow .2s;
     }
 
     .demo-btn:hover {
-      background: var(--signal);
-      color: #fff;
+      background: var(--ink);
+      color: #FFFFFF;
       transform: translateY(-2px);
-      gap: 9px;
-      box-shadow: 0 6px 16px rgba(86, 64, 214, 0.28);
+      box-shadow: 0 6px 16px rgba(21, 23, 26, 0.2);
     }
 
     .demo-btn:active {
       transform: translateY(0);
       box-shadow: none;
+    }
+
+    .demo-btn.btn-line {
+      background: #00B900;
+      color: #FFFFFF;
+      border: 1px solid #00B900;
+    }
+
+    .demo-btn.btn-line:hover {
+      background: #009900;
+      border-color: #009900;
+      box-shadow: 0 6px 16px rgba(0, 185, 0, 0.28);
     }
 
     /* code-preview card (no screenshot) */
@@ -955,7 +986,7 @@
           <div class="readout">
             <div class="readout-cell">
               <p class="readout-label">LINE Friends</p>
-              <p class="readout-value">203<span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
+              <p class="readout-value">300<span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
               <span class="readout-dot"></span>
             </div>
             <div class="readout-cell">
@@ -972,7 +1003,7 @@
             </div>
             <div class="readout-cell">
               <p class="readout-label" data-i18n="readout-projects-label">ผลงานทั้งหมด</p>
-              <p class="readout-value">7<span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
+              <p class="readout-value">9<span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
             </div>
           </div>
         </div><!-- /hero-left -->
@@ -1029,7 +1060,10 @@
               <h3 class="work-title" data-i18n="prj01-title">ระบบ POS และจัดการต้นทุน-กำไร</h3>
               <p class="work-desc" data-i18n="prj01-desc">พัฒนาเว็บแอปสำหรับร้านเสม &amp; Friends (หม่าล่าทอด) ตั้งแต่หน้าบันทึกการขาย ไปจนถึงระบบบันทึกต้นทุนวัตถุดิบ เชื่อมต่อ Google Apps Script และ Google Sheets เป็นฐานข้อมูล พร้อมแดชบอร์ดแสดงยอดขาย กำไรสุทธิ และอันดับเมนูขายดีที่อัปเดตอัตโนมัติ ใช้งานจริงกับร้านทุกวัน</p>
               <span class="work-link live-badge" style="color:var(--ok);font-weight:600;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;"></span><span class="live-text-th">ใช้งานจริงอยู่ในปัจจุบัน</span><span class="live-text-en" style="display:none;">Live in production</span></span>
-              <p class="work-link"><a class="demo-btn" href="https://lin.ee/NbLGjNs" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+              <p class="work-link">
+                <a class="demo-btn" href="./pos-system/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
+                <a class="demo-btn btn-line" style="margin-left: 8px;" href="https://lin.ee/qR4BuxM" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>LINE OA</a>
+              </p>
             </div>
           </div>
         </article>
@@ -1037,12 +1071,28 @@
         <article class="work-card">
           <div class="work-media">
             <span class="work-id">PRJ-02</span>
+            <img loading="lazy" src="https://i.imgur.com/wT90DYs.png" alt="กลยุทธ์การตลาดดิจิทัล ขนมไทยเกาะเกร็ด" data-i18n-alt="prj04-alt">
+          </div>
+          <div class="work-body">
+            <div class="work-tags">
+              <span class="tag t-group">Group Project</span>
+              <span class="tag t-skill">Strategy</span>
+            </div>
+            <h3 class="work-title" data-i18n="prj04-title">กลยุทธ์การตลาดดิจิทัล: ขนมไทยเกาะเกร็ด</h3>
+            <p class="work-desc" data-i18n="prj04-desc">วิเคราะห์ Customer Persona และ Customer Journey ออกแบบกลยุทธ์ Omnichannel Marketing ครบ Funnel (TikTok, Instagram, Facebook, Shopee, LINE OA) พร้อมวางแผนแคมเปญและตัวชี้วัด KPI</p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1Us5Ym0IZf2rqKIuL6ME-67Fq8FqLiTlZ/view?usp=share_link" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <span class="work-id">PRJ-03</span>
             <img loading="lazy" src="https://i.imgur.com/bV2LlsD.png" alt="ระบบบริหารจัดการคลังวัสดุและครุภัณฑ์" data-i18n-alt="prj02-alt">
           </div>
           <div class="work-body">
             <div class="work-tags">
-              <span class="tag t-group">Senior Project</span>
-              <span class="tag t-group">Thaicom</span>
+              <span class="tag t-senior">Senior Project</span>
+              <span class="tag t-corp">Thaicom Public Company Limited</span>
               <span class="tag t-skill">Figma</span>
               <span class="tag t-skill">PHP / Laravel</span>
               <span class="tag t-skill">Oracle DB</span>
@@ -1054,7 +1104,7 @@
         </article>
         <article class="work-card">
           <div class="work-media">
-            <span class="work-id">PRJ-03</span>
+            <span class="work-id">PRJ-04</span>
             <img loading="lazy" src="https://i.imgur.com/DW6DPbe.png" alt="ระบบการจัดการคลังยาและการขายสินค้า" data-i18n-alt="prj03-alt">
           </div>
           <div class="work-body">
@@ -1066,23 +1116,7 @@
             </div>
             <h3 class="work-title" data-i18n="prj03-title">ระบบการจัดการคลังยาและการขายสินค้า</h3>
             <p class="work-desc" data-i18n="prj03-desc">วิเคราะห์ ออกแบบ และพัฒนาระบบจัดการคลังยาแบบครบวงจร ครอบคลุมตั้งแต่การจัดการสต็อกสินค้า ทะเบียนลูกค้า บันทึกการขาย การจัดส่ง ไปจนถึงการออกรายงานสรุปยอดขายสำหรับผู้บริหาร พัฒนาด้วยเทคโนโลยี PHP, MySQL, HTML, CSS, Bootstrap, JavaScript, AJAX และ JSON</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1aiqVZcouQzS3-REt94mSPIo7pJ-Vkpob/view?usp=sharing" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-media">
-            <span class="work-id">PRJ-04</span>
-            <img loading="lazy" src="https://i.imgur.com/wT90DYs.png" alt="กลยุทธ์การตลาดดิจิทัล ขนมไทยเกาะเกร็ด" data-i18n-alt="prj04-alt">
-          </div>
-          <div class="work-body">
-            <div class="work-tags">
-              <span class="tag t-group">Group Project</span>
-              <span class="tag t-skill">Strategy</span>
-            </div>
-            <h3 class="work-title" data-i18n="prj04-title">กลยุทธ์การตลาดดิจิทัล: ขนมไทยเกาะเกร็ด</h3>
-            <p class="work-desc" data-i18n="prj04-desc">วิเคราะห์ Customer Persona และ Customer Journey ออกแบบกลยุทธ์ Omnichannel Marketing ครบ Funnel (TikTok, Instagram, Facebook, Shopee, LINE OA) พร้อมวางแผนแคมเปญและตัวชี้วัด KPI</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1Us5Ym0IZf2rqKIuL6ME-67Fq8FqLiTlZ/view?usp=share_link" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1aiqVZcouQzS3-REt94mSPIo7pJ-Vkpob/view?usp=sharing" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
@@ -1098,7 +1132,7 @@
             </div>
             <h3 class="work-title">Blue Light Detector</h3>
             <p class="work-desc" data-i18n="prj05-desc">พัฒนาโปรแกรมควบคุม ESP32-S3 อ่านค่าจากเซนเซอร์วัดระยะห่าง (VL53L0X) และความสว่าง (TSL2591) แสดงผลผ่านจอ OLED และเว็บแดชบอร์ดแบบเรียลไทม์ พร้อมจัดทำแผนธุรกิจเสนอขอทุนสนับสนุน</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1R4iKf8BSUwJVgZql4eVHG2k-B8VTEgNj/view?usp=share_link" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1R4iKf8BSUwJVgZql4eVHG2k-B8VTEgNj/view?usp=share_link" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
@@ -1114,7 +1148,7 @@
             </div>
             <h3 class="work-title">Food for Everyone</h3>
             <p class="work-desc" data-i18n="prj06-desc">ออกแบบ flow แอปสั่งอาหารแบบครบวงจร ตั้งแต่ onboarding, login, เลือกสินค้า, ตะกร้า ไปจนถึงระบบติดตามออเดอร์และโปรไฟล์ผู้ใช้</p>
-            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/xwuPYIFrSwVDrt4cBYSVok/projectcs100?node-id=0-1&t=JFXxs5YRxcnCp8G8-1" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/xwuPYIFrSwVDrt4cBYSVok/projectcs100?node-id=0-1&t=JFXxs5YRxcnCp8G8-1" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
@@ -1131,7 +1165,7 @@
             <h3 class="work-title">TUNGTUNGTUNGFOOD</h3>
             <p class="work-desc" data-i18n="prj07-desc">พัฒนาเว็บไซต์สั่งอาหารตั้งแต่หน้าเมนู ตะกร้าสินค้า ไปจนถึงระบบ Checkout ที่คำนวณราคาและยืนยันคำสั่งซื้อได้จริง ด้วย HTML, CSS, JavaScript และ Bootstrap</p>
             <p class="work-link">
-              <a class="demo-btn" href="./web-food/index.html" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a>
+              <a class="demo-btn" href="./web-food/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
               <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/web-food1.git" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
             </p>
           </div>
@@ -1141,7 +1175,7 @@
         <article class="work-card">
           <div class="work-media">
             <span class="work-id">PRJ-08</span>
-            <img loading="lazy" src="https://i.postimg.cc/hPd7gb88/Screenshot-2569-07-18-at-11-36-07.png" alt="หน้าจอเว็บแอป GALAXY Store" data-i18n-alt="prj09-alt">
+            <img loading="lazy" src="./galaxy-store.png" alt="หน้าจอเว็บแอป GALAXY Store" data-i18n-alt="prj09-alt">
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1151,7 +1185,7 @@
             <h3 class="work-title">GALAXY Store</h3>
             <p class="work-desc" data-i18n="prj09-desc">ออกแบบและพัฒนาเว็บไซต์ GALAXY Store สำหรับเปรียบเทียบอุปกรณ์อิเล็กทรอนิกส์และเครื่องใช้ไฟฟ้า ดีไซน์ระดับ Premium พร้อมระบบ Interactive UI ด้วย JavaScript</p>
             <p class="work-link">
-              <a class="demo-btn" href="./galaxy-s26-compare/index.html" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a>
+              <a class="demo-btn" href="./galaxy-s26-compare/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
               <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/galaxy-s26-compare" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
             </p>
           </div>
@@ -1160,7 +1194,7 @@
         <article class="work-card">
           <div class="work-media">
             <span class="work-id">PRJ-09</span>
-            <img loading="lazy" src="https://i.postimg.cc/hv7hDcmx/Screenshot-2569-07-18-at-11-43-56.png" alt="ภาพร่างและดีไซน์ Daily UI Challenge" data-i18n-alt="prj10-alt">
+            <img loading="lazy" src="./figma-cat.png" alt="ภาพร่างและดีไซน์ Daily UI Challenge" data-i18n-alt="prj10-alt">
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1169,7 +1203,7 @@
             </div>
             <h3 class="work-title">Daily UI Challenge</h3>
             <p class="work-desc" data-i18n="prj10-desc">ผลงานการออกแบบ UI รูปแบบต่างๆ เพื่อฝึกฝนทักษะด้าน UX/UI และการจัดวาง Layout ที่ทันสมัย ผ่านโจทย์รายวันใน Figma</p>
-            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/pgtVCKfQ1MaVd4QzS9G3fA/Daily-UI?node-id=0-1&t=gaJ4nEEjU3fEUWPs-1" target="_blank" rel="noopener" data-i18n="demo-link">↗ เปิดดูผลงาน</a></p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/pgtVCKfQ1MaVd4QzS9G3fA/Daily-UI?node-id=0-1&t=gaJ4nEEjU3fEUWPs-1" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
@@ -1265,7 +1299,7 @@
           <div class="bg-item">
             <p class="bg-role" data-i18n="bg-role-4">วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศ</p>
             <p class="bg-org" data-i18n="bg-org-4">มหาวิทยาลัยกรุงเทพ คณะเทคโนโลยีสารสนเทศและนวัตกรรม</p>
-            <p class="bg-meta" data-i18n="bg-meta-4">GPAX 3.89 · คาดว่าจะจบ พฤษภาคม 2570</p>
+            <p class="bg-meta" data-i18n="bg-meta-4">GPAX 3.50 · คาดว่าจะจบ พฤษภาคม 2570</p>
           </div>
           <div class="bg-item">
             <p class="bg-role" data-i18n="bg-role-5">มัธยมศึกษา สาขาศิลป์-คำนวณ</p>
@@ -1314,7 +1348,7 @@
         <a class="btn primary" href="mailto:kosalyphonsthnu@gmail.com" data-i18n="contact-email-btn">ส่งอีเมลถึงผม</a>
         <a class="btn" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
         <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
-        <a class="btn" href="tel:0641174443">064-117-4443</a>
+        <a class="btn" href="tel:+66641174443">064-117-4443</a>
         <a class="btn" href="https://github.com/pooh23z" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/kosan-phongthanu" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -1370,7 +1404,7 @@
         'prj03-title': 'Pharmacy Inventory & Sales Management System',
         'prj03-desc': 'Analyzed, designed, and built an end-to-end pharmacy inventory system — covering stock management, customer records, sales, delivery, and executive sales reports. Built with PHP, MySQL, HTML, CSS, Bootstrap, JavaScript, AJAX, and JSON.',
         'prj03-alt': 'Pharmacy inventory and sales management system screen',
-        'demo-link': '↗ View Project',
+        'demo-link': 'View Project',
         'prj04-title': 'Digital Marketing Strategy: Koh Kret Thai Sweets',
         'prj04-desc': 'Analyzed customer personas and customer journeys, then designed a full-funnel omnichannel marketing strategy (TikTok, Instagram, Facebook, Shopee, LINE OA) with campaign planning and KPI tracking.',
         'prj04-alt': 'Digital marketing strategy for Koh Kret Thai sweets',
@@ -1404,7 +1438,7 @@
         'bg-cert-meta-2': '2026',
         'bg-role-4': 'B.Sc. in Information Technology',
         'bg-org-4': 'Bangkok University, Faculty of Information Technology and Innovation',
-        'bg-meta-4': 'GPA 3.89 · Expected graduation May 2027',
+        'bg-meta-4': 'GPA 3.50 · Expected graduation May 2027',
         'bg-role-5': 'High School, Arts–Math Program',
         'bg-org-5': 'Suankularb Wittayalai Chonburi School',
         'contact-title': 'Ready to learn and build',
