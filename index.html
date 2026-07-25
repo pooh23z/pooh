@@ -1099,27 +1099,31 @@
         b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
       });
 
-      // Counter Animation
+      // Counter Animation (Smooth Count-Up)
+      function formatNum(num, isDecimal) {
+        if (isDecimal) return num.toFixed(2);
+        return Math.floor(num).toLocaleString('en-US');
+      }
+
       function animateCounters() {
         var counters = document.querySelectorAll('.counter');
         counters.forEach(function(counter) {
           var target = parseFloat(counter.getAttribute('data-target'));
           var isDecimal = counter.getAttribute('data-decimal') === 'true';
-          var duration = 2000;
+          var duration = 1600;
           var start = 0;
           var startTime = null;
 
           function updateCounter(currentTime) {
             if (!startTime) startTime = currentTime;
-            var progress = (currentTime - startTime) / duration;
-
+            var progress = Math.min((currentTime - startTime) / duration, 1);
+            var easeOut = 1 - Math.pow(1 - progress, 3);
+            var current = start + (target - start) * easeOut;
+            counter.textContent = formatNum(current, isDecimal);
             if (progress < 1) {
-              var easeOut = 1 - Math.pow(1 - progress, 3);
-              var current = start + (target - start) * easeOut;
-              counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
               requestAnimationFrame(updateCounter);
             } else {
-              counter.textContent = isDecimal ? target.toFixed(2) : target;
+              counter.textContent = formatNum(target, isDecimal);
             }
           }
 
