@@ -6,43 +6,67 @@
   <title>Kosan Phongthanu — Portfolio</title>
   <meta name="description" content="พอร์ตโฟลิโอของโกศัลย์ พงษ์ธนู นักศึกษาเทคโนโลยีสารสนเทศ ม.กรุงเทพ ที่สร้างระบบจริงตั้งแต่ POS ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์ IoT ผสมงานออกแบบ โค้ด และความคิดเชิงธุรกิจไว้ในตัวเดียว">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kosan Phongthanu — Portfolio">
-  <meta property="og:description" content="นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ">
+  <meta property="og:title" content="Kosan Phongthanu — Portfolio | Junior UX/UI Designer & Marketing">
+  <meta property="og:description" content="นักศึกษาเทคโนโลยีสารสนเทศ ม.กรุงเทพ ที่สร้างระบบจริงจากปัญหาจริง ตั้งแต่ระบบ POS สุกี้หมาล่า ไปจนถึง Senior Project 113+ หน้าจอ">
   <meta property="og:image" content="https://i.imgur.com/3Z38He8.png">
-  <meta property="og:url" content="https://pooh23z.github.io/portfolio">
+  <meta property="og:url" content="https://portfolio-cyan-theta-22.vercel.app">
   <link rel="icon" type="image/png" href="https://i.imgur.com/3Z38He8.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kosan Phongthanu — Portfolio">
-  <meta name="twitter:description" content="นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ">
+  <meta name="twitter:title" content="Kosan Phongthanu — Portfolio | Junior UX/UI Designer & Marketing">
+  <meta name="twitter:description" content="นักศึกษาเทคโนโลยีสารสนเทศ ม.กรุงเทพ ที่สร้างระบบจริงจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ">
   <meta name="twitter:image" content="https://i.imgur.com/3Z38He8.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #F5F5F2;
+      --paper: #FAFAFA;
       --surface: #FFFFFF;
-      --ink: #15171A;
-      --steel: #5B6168;
-      --steel-soft: #8A8F94;
-      --line: #E1E1DC;
-      --signal: #5640D6;
-      --signal-soft: #EFEBFC;
+      --ink: #121212;
+      --steel: #525252;
+      --steel-soft: #888888;
+      --line: #E5E5E5;
+      --signal: #121212;
+      --signal-soft: #F0F0F0;
+      --signal-glow: rgba(0, 0, 0, 0.08);
       --ok: #2E7D5B;
       --ok-soft: #E7F3EC;
       --warn: #B5790E;
       --warn-soft: #FBF1DF;
       --radius: 14px;
       --max: 1080px;
+      --shadow-sm: 0 2px 8px rgba(18, 18, 18, 0.06);
+      --shadow-md: 0 8px 24px rgba(18, 18, 18, 0.08);
+      --shadow-lg: 0 16px 48px rgba(18, 18, 18, 0.12);
+      --shadow-xl: 0 24px 64px rgba(18, 18, 18, 0.16);
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    * {
-      box-sizing: border-box;
+    [data-theme="dark"] {
+      --paper: #0A0A0C;
+      --surface: #141416;
+      --ink: #F5F5F7;
+      --steel: #A1A1AA;
+      --steel-soft: #71717A;
+      --line: #27272A;
+      --signal: #FFFFFF;
+      --signal-soft: rgba(255, 255, 255, 0.08);
+      --signal-glow: rgba(255, 255, 255, 0.15);
+      --ok: #4ADE80;
+      --ok-soft: rgba(46, 125, 91, 0.15);
+      --warn: #FBBF24;
+      --warn-soft: rgba(181, 121, 14, 0.15);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -53,904 +77,311 @@
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    .mono {
-      font-family: 'IBM Plex Mono', monospace;
-    }
-
-    .display {
-      font-family: 'Chonburi', serif;
-    }
-
-    /* ---------- nav ---------- */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(245, 245, 242, 0.88);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-name {
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--steel);
-      transition: color .15s;
-    }
-
-    .nav-links a:hover {
-      color: var(--signal);
-    }
-
-    .lang-switch {
-      display: flex;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      overflow: hidden;
-      flex-shrink: 0;
-      margin-left: 20px;
-    }
-
-    .lang-btn {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 6px 13px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      color: var(--steel-soft);
-      transition: background .15s, color .15s;
-    }
-
-    .lang-btn.active {
-      background: var(--ink);
-      color: #fff;
-    }
-
-    .lang-btn:not(.active):hover {
-      color: var(--signal);
-    }
-
-    /* applies to every link on the page, so the nav links are covered too —
-       no need to repeat the .nav-links a selector here */
-    a:focus-visible {
-      outline: 2px solid var(--signal);
-      outline-offset: 3px;
-      border-radius: 3px;
-    }
-
-    /* ---------- hero ---------- */
-    .hero {
-      padding: 72px 0 40px;
-    }
-
-    .eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12.5px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--signal);
-      font-weight: 600;
-      margin: 0 0 18px;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: flex-start;
-    }
-
-    .hero-name {
-      font-size: clamp(40px, 7vw, 68px);
-      line-height: 1.05;
-      margin: 0 0 14px;
-      color: var(--ink);
-    }
-
-    .hero-sub {
-      font-size: clamp(17px, 2.4vw, 20px);
-      color: var(--steel);
-      max-width: 620px;
-      margin: 0 0 40px;
-      font-weight: 400;
-    }
-
-    /* hero portrait photo */
-    .hero-photo {
-      width: 220px;
-      height: 280px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      flex-shrink: 0;
-      background: #EDEEEA; /* fallback while no photo src is set */
-      box-shadow: 0 4px 24px rgba(21, 23, 26, 0.10);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    /* readout strip — signature element */
-    .readout {
-      display: flex;
-      flex-wrap: wrap;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      overflow: hidden;
-    }
-
-    .readout-cell {
-      flex: 1 1 150px;
-      padding: 18px 20px;
-      border-right: 1px solid var(--line);
-      position: relative;
-    }
-
-    .readout-cell:last-child {
-      border-right: none;
-    }
-
-    .readout-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10.5px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--steel-soft);
-      margin: 0 0 8px;
-    }
-
-    .readout-value {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: clamp(18px, 2.6vw, 24px);
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .readout-value .unit {
-      font-size: 13px;
-      color: var(--steel);
-      font-weight: 400;
-      margin-left: 3px;
-    }
-
-    .readout-dot {
-      position: absolute;
-      top: 18px;
-      right: 16px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--ok);
-    }
-
-    /* ---------- section shell ---------- */
-    .section {
-      padding: 84px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      margin: 0 0 40px;
-    }
-
-    .section-title {
-      font-size: clamp(26px, 3.4vw, 34px);
-      margin: 6px 0 0;
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .section-lede {
-      color: var(--steel);
-      max-width: 620px;
-      margin: 14px 0 0;
-      font-size: 16px;
-    }
-
-    /* ---------- intro ---------- */
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .intro-text p {
-      color: var(--ink);
-      font-size: 17.5px;
-      margin: 0 0 18px;
-    }
-
-    .intro-text strong {
-      color: var(--signal);
-      font-weight: 600;
-    }
-
-    .intro-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px 26px 22px;
-    }
-
-    .intro-card h4 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--steel-soft);
-      margin: 0 0 16px;
-      font-weight: 600;
-    }
-
-    .intro-card ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .intro-card li {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 11px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 14.5px;
-      flex-wrap: wrap;
-    }
-
-    .intro-card li:last-child {
-      border-bottom: none;
-    }
-
-    .intro-card li span:first-child {
-      color: var(--steel);
-    }
-
-    .intro-card li span:last-child {
-      color: var(--ink);
-      font-weight: 500;
-      text-align: right;
-    }
-
-    /* ---------- work grid ---------- */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .work-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-      border-color: #D1D5DB;
-    }
-
-    .work-card.featured {
-      grid-column: 1 / -1;
-    }
-
-    .work-card.featured .work-media-row {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-    }
-
-    .work-media {
-      position: relative;
-      aspect-ratio: 16/10;
-      overflow: hidden;
-      background: #EDEEEA; /* fallback while no screenshot src is set */
-    }
-
-    .work-card.featured .work-media {
-      aspect-ratio: auto;
-      height: 100%;
-      min-height: 260px;
-    }
-
-    .work-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .work-card:hover .work-media img {
-      transform: scale(1.05);
-    }
-
-    .work-id {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      background: rgba(21, 23, 26, 0.78);
-      color: #fff;
-      padding: 4px 9px;
-      border-radius: 6px;
-    }
-
-    .work-body {
-      padding: 22px 24px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .work-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 2px;
-    }
-
-    .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.03em;
-      padding: 4px 10px;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tag::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .tag.t-self {
-      background: var(--ok-soft);
-      color: var(--ok);
-    }
-
-    .tag.t-self::before {
-      background: var(--ok);
-    }
-
-    .tag.t-group {
-      background: var(--warn-soft);
-      color: var(--warn);
-    }
-
-    .tag.t-group::before {
-      background: var(--warn);
-    }
-
-    .tag.t-senior {
-      background: #374151;
-      color: #F9FAFB;
-    }
-
-    .tag.t-senior::before {
-      background: #9CA3AF;
-    }
-
-    .tag.t-corp {
-      background: #111827;
-      color: #F9FAFB;
-      font-weight: 600;
-      border: 1px solid #374151;
-    }
-
-    .tag.t-corp::before {
-      display: none;
-    }
-
-    .tag.t-skill {
-      background: var(--signal-soft);
-      color: var(--signal);
-    }
-
-    .tag.t-skill::before {
-      background: var(--signal);
-    }
-
-    .work-title {
-      font-size: 19px;
-      font-weight: 600;
-      margin: 0;
-      color: var(--ink);
-    }
-
-    .work-desc {
-      font-size: 14.5px;
-      color: var(--steel);
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .work-link {
-      margin-top: 10px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12.5px;
-      color: var(--steel-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .demo-btn {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      background: #FFFFFF;
-      border: 1px solid var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 9px 18px;
-      border-radius: 24px;
-      transition: background .2s, color .2s, transform .2s, box-shadow .2s;
-    }
-
-    .demo-btn:hover {
-      background: var(--ink);
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(21, 23, 26, 0.2);
-    }
-
-    .demo-btn:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
-
-    .demo-btn.btn-line {
-      background: #00B900;
-      color: #FFFFFF;
-      border: 1px solid #00B900;
-    }
-
-    .demo-btn.btn-line:hover {
-      background: #009900;
-      border-color: #009900;
-      box-shadow: 0 6px 16px rgba(0, 185, 0, 0.28);
-    }
-
-    /* code-preview card (no screenshot) */
-    .code-media {
-      aspect-ratio: 16/10;
-      background: #181A1F;
-      color: #D7DAE0;
-      padding: 20px 22px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12.5px;
-      line-height: 1.7;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .code-media .ln {
-      color: #5A6068;
-      margin-right: 14px;
-      user-select: none;
-    }
-
-    .code-media .kw {
-      color: #C792EA;
-    }
-
-    .code-media .fn {
-      color: #82AAFF;
-    }
-
-    .code-media .str {
-      color: #ECC48D;
-    }
-
-    /* ---------- skills ---------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px 40px;
-    }
-
-    .skill-group h4 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--signal);
-      margin: 0 0 14px;
-      font-weight: 600;
-    }
-
-    .skill-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--ink);
-      font-size: 13.5px;
-      padding: 7px 13px;
-      border-radius: 8px;
-    }
-
-    /* ---------- background ---------- */
-    .bg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-
-    .bg-col h4 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--steel-soft);
-      margin: 0 0 18px;
-      font-weight: 600;
-    }
-
-    .bg-item {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .bg-item:last-child {
-      border-bottom: none;
-    }
-
-    .bg-role {
-      font-weight: 600;
-      font-size: 15.5px;
-      color: var(--ink);
-      margin: 0 0 3px;
-    }
-
-    .bg-org {
-      font-size: 13.5px;
-      color: var(--steel);
-      margin: 0;
-    }
-
-    .bg-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
-      color: var(--steel-soft);
-      margin-top: 5px;
-    }
-
-    /* ---------- contact / footer ---------- */
-    .contact {
-      padding: 84px 0 64px;
-      text-align: left;
-    }
-
-    .contact-title {
-      font-size: clamp(28px, 4vw, 42px);
-      margin: 0 0 16px;
-      font-weight: 600;
-    }
-
-    .contact-sub {
-      color: var(--steel);
-      max-width: 540px;
-      margin: 0 0 32px;
-      font-size: 16.5px;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 48px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 22px;
-      border-radius: 9px;
-      font-size: 14.5px;
-      font-weight: 500;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      transition: border-color .15s, transform .15s;
-    }
-
-    .btn:hover {
-      border-color: var(--signal);
-      transform: translateY(-1px);
-    }
-
-    .btn.primary {
-      background: var(--ink);
-      color: #fff;
-      border-color: var(--ink);
-    }
-
-    .btn.primary:hover {
-      background: var(--signal);
-      border-color: var(--signal);
-    }
-
-    .foot-bottom {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11.5px;
-      color: var(--steel-soft);
-    }
-
+      transition: background-color var(--transition-base), color var(--transition-base);
+    }
+
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .display { font-family: 'Chonburi', serif; }
+
+
+    /* Scroll Progress */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--ink); z-index: 10001; transition: width 0.1s linear; border-radius: 0 2px 2px 0; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(245, 245, 242, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); transition: background-color var(--transition-base), border-color var(--transition-base); }
+    [data-theme="dark"] .nav { background: rgba(15, 17, 21, 0.88); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-name { font-weight: 600; font-size: 15px; letter-spacing: 0.01em; position: relative; overflow: hidden; }
+    .nav-name::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--signal); transition: width var(--transition-base); }
+    .nav-name:hover::after { width: 100%; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 14px; color: var(--steel); transition: color var(--transition-fast); position: relative; padding: 4px 0; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--signal); transition: width var(--transition-base); border-radius: 1px; }
+    .nav-links a:hover { color: var(--signal); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); font-size: 16px; }
+    .theme-toggle:hover { border-color: var(--signal); transform: rotate(15deg) scale(1.1); box-shadow: 0 0 12px var(--signal-glow); }
+    .lang-switch { display: flex; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; padding: 6px 13px; background: transparent; border: none; cursor: pointer; color: var(--steel-soft); transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast); }
+    .lang-btn.active { background: var(--ink); color: #fff; }
+    .lang-btn:not(.active):hover { color: var(--signal); transform: scale(1.05); }
+    a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 3px; }
+
+    /* Hero */
+    .hero { padding: 72px 0 40px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, var(--signal-glow) 0%, transparent 70%); pointer-events: none; animation: float 8s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-30px, -20px) scale(1.05); } 66% { transform: translate(20px, 10px) scale(0.95); } }
+    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--signal); font-weight: 600; margin: 0 0 18px; display: inline-flex; align-items: center; gap: 8px; }
+    .eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--signal); display: inline-block; animation: expandLine 2s ease-in-out infinite; }
+    @keyframes expandLine { 0%, 100% { width: 24px; } 50% { width: 40px; } }
+    .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: flex-start; position: relative; z-index: 1; }
+    .hero-name { font-size: clamp(40px, 7vw, 68px); line-height: 1.05; margin: 0 0 14px; color: var(--ink); position: relative; }
+    .hero-name .char { display: inline-block; opacity: 0; transform: translateY(20px); animation: charReveal 0.5s ease forwards; }
+    @keyframes charReveal { to { opacity: 1; transform: translateY(0); } }
+    .hero-sub { font-size: clamp(17px, 2.4vw, 20px); color: var(--steel); max-width: 620px; margin: 0 0 40px; font-weight: 400; line-height: 1.7; }
+    .hero-photo { width: 220px; height: 280px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); flex-shrink: 0; background: var(--surface); box-shadow: var(--shadow-lg); position: relative; transition: transform var(--transition-slow), box-shadow var(--transition-slow); }
+    .hero-photo:hover { transform: translateY(-8px) rotate(2deg); box-shadow: var(--shadow-xl); }
+    .hero-photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.1) 100%); z-index: 1; pointer-events: none; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform var(--transition-slow); }
+    .hero-photo:hover img { transform: scale(1.08); }
+
+    /* Readout */
+    .readout { display: flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow var(--transition-base), transform var(--transition-base); }
+    .readout:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .readout-cell { flex: 1 1 150px; padding: 18px 20px; border-right: 1px solid var(--line); position: relative; transition: background-color var(--transition-fast); }
+    .readout-cell:hover { background: var(--signal-soft); }
+    .readout-cell:last-child { border-right: none; }
+    .readout-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-soft); margin: 0 0 8px; }
+    .readout-value { font-family: 'IBM Plex Mono', monospace; font-size: clamp(18px, 2.6vw, 24px); font-weight: 600; color: var(--ink); display: flex; align-items: baseline; gap: 4px; }
+    .readout-value .unit { font-size: 13px; color: var(--steel); font-weight: 400; }
+    .readout-value .counter { display: inline-block; min-width: 1ch; }
+    .readout-dot { position: absolute; top: 18px; right: 16px; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 125, 91, 0.4); } 50% { opacity: 0.7; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(46, 125, 91, 0); } }
+
+    /* Section */
+    .section { padding: 84px 0; border-top: 1px solid var(--line); position: relative; }
+    .section-head { margin: 0 0 40px; }
+    .section-title { font-size: clamp(26px, 3.4vw, 34px); margin: 6px 0 0; color: var(--ink); font-weight: 600; position: relative; display: inline-block; }
+    .section-title::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 60px; height: 3px; background: var(--signal); border-radius: 2px; transition: width var(--transition-slow); }
+    .section-head:hover .section-title::after { width: 100%; }
+    .section-lede { color: var(--steel); max-width: 620px; margin: 14px 0 0; font-size: 16px; line-height: 1.7; }
+
+    /* Intro */
+    .intro-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
+    .intro-text p { color: var(--ink); font-size: 17.5px; margin: 0 0 18px; line-height: 1.8; }
+    .intro-text strong { color: var(--signal); font-weight: 600; position: relative; }
+    .intro-text strong::after { content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 6px; background: var(--signal-soft); z-index: -1; border-radius: 2px; }
+    .intro-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 26px 22px; box-shadow: var(--shadow-sm); transition: box-shadow var(--transition-base), transform var(--transition-base); position: relative; overflow: hidden; }
+    .intro-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--signal); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-slow); }
+    .intro-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .intro-card:hover::before { transform: scaleX(1); }
+    .intro-card h4 { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel-soft); margin: 0 0 16px; font-weight: 600; }
+    .intro-card ul { list-style: none; margin: 0; padding: 0; }
+    .intro-card li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; flex-wrap: wrap; transition: padding-left var(--transition-fast); }
+    .intro-card li:hover { padding-left: 8px; color: var(--signal); }
+    .intro-card li:last-child { border-bottom: none; }
+    .intro-card li span:first-child { color: var(--steel); }
+    .intro-card li span:last-child { color: var(--ink); font-weight: 500; text-align: right; }
+
+    /* Work Grid */
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .work-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base); position: relative; }
+    .work-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%); opacity: 0; transition: opacity var(--transition-base); pointer-events: none; z-index: 1; }
+    .work-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--signal); }
+    .work-card:hover::before { opacity: 1; }
+    .work-card.featured { grid-column: 1 / -1; }
+    .work-card.featured .work-media-row { display: grid; grid-template-columns: 1.1fr 1fr; }
+    .work-media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--surface); }
+    .work-card.featured .work-media { aspect-ratio: auto; height: 100%; min-height: 260px; }
+    .work-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .work-card:hover .work-media img { transform: scale(1.08); }
+    .work-media-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%); opacity: 0; transition: opacity var(--transition-base); display: flex; align-items: flex-end; padding: 20px; z-index: 2; }
+    .work-card:hover .work-media-overlay { opacity: 1; }
+    .work-media-overlay-text { color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.05em; }
+    .work-id { position: absolute; top: 14px; left: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; background: rgba(21, 23, 26, 0.85); color: #fff; padding: 4px 9px; border-radius: 6px; z-index: 3; backdrop-filter: blur(4px); }
+    .work-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; position: relative; z-index: 2; }
+    .work-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2px; }
+    .tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.03em; padding: 4px 10px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+    .tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .tag::before { content: ""; width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+    .tag.t-self { background: var(--ok-soft); color: var(--ok); }
+    .tag.t-self::before { background: var(--ok); }
+    .tag.t-group { background: var(--warn-soft); color: var(--warn); }
+    .tag.t-group::before { background: var(--warn); }
+    .tag.t-senior { background: #374151; color: #F9FAFB; }
+    .tag.t-senior::before { background: #9CA3AF; }
+    .tag.t-corp { background: #111827; color: #F9FAFB; font-weight: 600; border: 1px solid #374151; }
+    .tag.t-corp::before { display: none; }
+    .tag.t-skill { background: var(--signal-soft); color: var(--signal); }
+    .tag.t-skill::before { background: var(--signal); }
+    .work-title { font-size: 19px; font-weight: 600; margin: 0; color: var(--ink); transition: color var(--transition-fast); }
+    .work-card:hover .work-title { color: var(--signal); }
+    .work-desc { font-size: 14.5px; color: var(--steel); margin: 0; line-height: 1.6; }
+    .work-link { margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--steel-soft); display: inline-flex; align-items: center; gap: 6px; }
+    .demo-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); background: var(--surface); border: 1px solid var(--line); display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 24px; transition: all var(--transition-fast); position: relative; overflow: hidden; isolation: isolate; cursor: pointer; }
+    .demo-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--signal); transition: left var(--transition-base); z-index: -1; }
+    .demo-btn:hover::before { left: 0; }
+    .demo-btn:hover { color: #FFFFFF; border-color: var(--signal); transform: translateY(-2px); box-shadow: 0 6px 16px var(--signal-glow); }
+    .demo-btn:active { transform: translateY(0); box-shadow: none; }
+    .demo-btn span, .demo-btn svg { position: relative; z-index: 1; }
+    .demo-btn.btn-line { background: #00B900; color: #FFFFFF; border: 1px solid #00B900; }
+    .demo-btn.btn-line::before { background: #009900; z-index: -1; }
+    .demo-btn.btn-line:hover { color: #FFFFFF; border-color: #009900; box-shadow: 0 6px 16px rgba(0, 185, 0, 0.28); }
+    .demo-btn.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .demo-btn.btn-ghost::before { background: var(--signal); z-index: -1; }
+    .demo-btn.btn-ghost:hover { color: #FFFFFF; border-color: var(--signal); box-shadow: 0 6px 16px var(--signal-glow); }
+    .live-badge { color: var(--ok); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+    .live-badge .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); display: inline-block; animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0; }
+    .wip-badge { color: var(--warn); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+    .wip-badge .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); display: inline-block; animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px; }
+    .skill-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+    .skill-group:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .skill-group h4 { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal); margin: 0 0 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .skill-group h4::before { content: ''; width: 8px; height: 8px; background: var(--signal); border-radius: 2px; display: inline-block; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 13.5px; padding: 7px 13px; border-radius: 8px; transition: all var(--transition-fast); cursor: default; }
+    .chip:hover { background: var(--signal-soft); border-color: var(--signal); color: var(--signal); transform: translateY(-2px); box-shadow: 0 4px 12px var(--signal-glow); }
+    .skill-bar-container { margin-top: 16px; }
+    .skill-bar-item { margin-bottom: 12px; }
+    .skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 13px; color: var(--steel); }
+    .skill-bar-track { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; background: var(--signal); border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* Background / Timeline */
+    .bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .bg-col h4 { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-soft); margin: 0 0 18px; font-weight: 600; }
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--line); border-radius: 1px; }
+    .timeline-item { position: relative; padding-bottom: 24px; padding-left: 20px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before { content: ''; position: absolute; left: -20px; top: 6px; width: 100%; width: 10px; height: 10px; background: var(--surface); border: 2px solid var(--signal); border-radius: 50%; transition: all var(--transition-fast); }
+    .timeline-item:hover::before { background: var(--signal); transform: scale(1.3); box-shadow: 0 0 0 6px var(--signal-glow); }
+    .timeline-item.active::before { background: var(--signal); animation: pulse 2s ease-in-out infinite; }
+    .bg-item { padding: 16px 0; border-bottom: 1px solid var(--line); transition: padding-left var(--transition-fast); }
+    .bg-item:hover { padding-left: 8px; }
+    .bg-item:last-child { border-bottom: none; }
+    .bg-role { font-weight: 600; font-size: 15.5px; color: var(--ink); margin: 0 0 3px; }
+    .bg-org { font-size: 13.5px; color: var(--steel); margin: 0; }
+    .bg-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--steel-soft); margin-top: 5px; }
+
+    /* Certifications */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+    .cert-card { background: var(--paper); padding: 32px; border-radius: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; height: 100%; transition: all var(--transition-base); position: relative; overflow: hidden; }
+    .cert-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--signal); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-slow); }
+    .cert-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--signal); }
+    .cert-card:hover::before { transform: scaleX(1); }
+    .cert-card img { border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: var(--shadow-sm); object-fit: contain; margin-top: auto; transition: transform var(--transition-base); }
+    .cert-card:hover img { transform: scale(1.02); }
+
+    /* Contact */
+    .contact { padding: 84px 0 64px; text-align: left; position: relative; overflow: hidden; }
+    .contact::before { content: ''; position: absolute; bottom: -30%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, var(--signal-glow) 0%, transparent 70%); pointer-events: none; animation: float 10s ease-in-out infinite reverse; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: start; margin-bottom: 48px; position: relative; z-index: 1; }
+    .contact-form-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; box-shadow: var(--shadow-md); transition: all var(--transition-base); text-align: left; }
+    .contact-form-card:hover { border-color: var(--signal); box-shadow: var(--shadow-lg); }
+    .form-group { margin-bottom: 18px; text-align: left; }
+    .form-label { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 6px; font-family: 'IBM Plex Sans Thai', sans-serif; }
+    .form-input { width: 100%; padding: 12px 16px; font-size: 14.5px; font-family: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 9px; transition: all var(--transition-fast); outline: none; }
+    .form-input:focus { border-color: var(--signal); box-shadow: 0 0 0 3px var(--signal-glow); background: var(--surface); }
+    .form-status { display: none; padding: 12px 16px; border-radius: 9px; font-size: 14px; margin-top: 14px; text-align: center; font-weight: 500; }
+    .form-status.success { display: block; background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok); }
+    .form-status.error { display: block; background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn); }
+    .contact-title { font-size: clamp(28px, 4vw, 42px); margin: 0 0 16px; font-weight: 600; position: relative; z-index: 1; }
+    .contact-sub { color: var(--steel); max-width: 540px; margin: 0 0 32px; font-size: 16.5px; line-height: 1.7; position: relative; z-index: 1; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 0; position: relative; z-index: 1; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 9px; font-size: 14.5px; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: all var(--transition-fast); position: relative; overflow: hidden; isolation: isolate; cursor: pointer; }
+    .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--signal); transition: left var(--transition-base); z-index: -1; }
+    .btn:hover::before { left: 0; }
+    .btn:hover { color: #FFFFFF; border-color: var(--signal); transform: translateY(-2px); box-shadow: 0 4px 12px var(--signal-glow); }
+    .btn span, .btn svg { position: relative; z-index: 1; }
+    .btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .btn.primary::before { background: #333333; z-index: -1; }
+    .btn.primary:hover { color: #FFFFFF; border-color: #000000; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); }
+
+    /* Dark Mode Button Overrides */
+    [data-theme="dark"] .demo-btn { background: var(--surface); color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] .demo-btn::before { background: #FFFFFF; z-index: -1; }
+    [data-theme="dark"] .demo-btn:hover { color: #0A0A0C !important; border-color: #FFFFFF; box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25); }
+    [data-theme="dark"] .demo-btn.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] .demo-btn.btn-ghost::before { background: #FFFFFF; z-index: -1; }
+    [data-theme="dark"] .demo-btn.btn-ghost:hover { color: #0A0A0C !important; border-color: #FFFFFF; }
+    [data-theme="dark"] .btn { background: var(--surface); color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] .btn::before { background: #FFFFFF; z-index: -1; }
+    [data-theme="dark"] .btn:hover { color: #0A0A0C !important; border-color: #FFFFFF; box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25); }
+    [data-theme="dark"] .btn.primary { background: #FFFFFF; color: #0A0A0C; border-color: #FFFFFF; }
+    [data-theme="dark"] .btn.primary::before { background: #E5E5E5; z-index: -1; }
+    [data-theme="dark"] .btn.primary:hover { color: #0A0A0C !important; border-color: #E5E5E5; box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35); }
+    [data-theme="dark"] .chip:hover { background: rgba(255, 255, 255, 0.12); border-color: #FFFFFF; color: #FFFFFF; }
+
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--line); padding-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--steel-soft); position: relative; z-index: 1; }
     @media (max-width: 760px) {
-      .wrap {
-        padding: 0 20px;
-      }
+      .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
 
-      .nav-inner {
-        padding: 14px 20px;
-      }
+    /* Scroll Animations */
+    .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+    .scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .scale-in.visible { opacity: 1; transform: scale(1); }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
 
-      .intro-grid,
-      .work-card.featured .work-media-row,
-      .skills-grid,
-      .bg-grid {
-        grid-template-columns: 1fr;
-      }
+    /* Back to Top */
+    .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all var(--transition-base); z-index: 100; box-shadow: var(--shadow-md); font-size: 20px; }
+    .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--signal); transform: translateY(-4px) scale(1.1); box-shadow: 0 8px 24px var(--signal-glow); }
 
-      .work-grid {
-        grid-template-columns: 1fr;
-      }
+    /* Particle Canvas */
+    #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.3; }
 
-      .nav-links {
-        gap: 16px;
-      }
+    /* Responsive */
+    @media (max-width: 760px) {
+      .wrap { padding: 0 20px; }
+      .nav-inner { padding: 14px 20px; }
+      .intro-grid, .work-card.featured .work-media-row, .skills-grid, .bg-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12.5px; }
+      .readout-cell { flex: 1 1 45%; }
+      .hero { padding: 40px 0 32px; }
+      .section { padding: 56px 0; }
+      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+      .hero-photo { width: 140px; height: 175px; order: -1; margin: 0 auto; }
+      .work-card.featured .work-media { height: auto; min-height: 0; aspect-ratio: 16/10; }
+      .contact-row { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
 
-      .nav-links a {
-        font-size: 12.5px;
-      }
-
-      .readout-cell {
-        flex: 1 1 45%;
-      }
-
-      .hero {
-        padding: 40px 0 32px;
-      }
-
-      .section {
-        padding: 56px 0;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .hero-photo {
-        width: 140px;
-        height: 175px;
-        order: -1;
-        margin: 0 auto;
-      }
-
-      .work-card.featured .work-media {
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 16/10;
-      }
-
-      .contact-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        justify-content: center;
-      }
-
-      .foot-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
     }
 
     @media (max-width: 480px) {
-      .wrap {
-        padding: 0 16px;
-      }
-
-      .nav-inner {
-        padding: 12px 16px;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: center;
-      }
-
-      .nav-name {
-        font-size: 13px;
-      }
-
-      .nav-links {
-        gap: 10px;
-      }
-
-      .nav-links a {
-        font-size: 11.5px;
-      }
-
-      .lang-switch {
-        margin-left: 0;
-      }
-
-      .hero {
-        padding: 32px 0 28px;
-      }
-
-      .section {
-        padding: 44px 0;
-      }
-
-      .readout-cell {
-        flex: 1 1 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .readout-cell:last-child {
-        border-bottom: none;
-      }
-
-      .work-body {
-        padding: 18px 18px 20px;
-      }
-
-      .intro-card {
-        padding: 20px 20px 18px;
-      }
-
-      .work-title {
-        font-size: 17.5px;
-      }
-
-      .contact-sub {
-        font-size: 15px;
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(1.3); }
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-size: 20px;
-    }
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .back-to-top:hover {
-      background: var(--signal);
-      transform: translateY(-3px);
+      .wrap { padding: 0 16px; }
+      .nav-inner { padding: 12px 16px; flex-wrap: wrap; gap: 8px; justify-content: center; }
+      .nav-name { font-size: 13px; }
+      .nav-links { gap: 10px; order: 3; width: 100%; justify-content: center; }
+      .nav-links a { font-size: 11.5px; }
+      .lang-switch { margin-left: 0; }
+      .nav-actions { order: 2; }
+      .hero { padding: 32px 0 28px; }
+      .section { padding: 44px 0; }
+      .readout-cell { flex: 1 1 100%; border-right: none; border-bottom: 1px solid var(--line); }
+      .readout-cell:last-child { border-bottom: none; }
+      .work-body { padding: 18px 18px 20px; }
+      .intro-card { padding: 20px 20px 18px; }
+      .work-title { font-size: 17.5px; }
+      .contact-sub { font-size: 15px; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .btn,
-      .nav-links a {
-        transition: none;
-      }
-      
-      .fade-up {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
+      html { scroll-behavior: auto; }
+      .btn, .nav-links a, .work-card, .intro-card, .cert-card, .skill-group, .chip, .tag, .readout, .hero-photo { transition: none; animation: none; }
+      .fade-up, .fade-left, .fade-right, .scale-in { opacity: 1; transform: none; transition: none; }
+      .hero::before, .contact::before { animation: none; }
+      .readout-dot, .live-badge .pulse-dot, .wip-badge .pulse-dot, .timeline-item.active::before { animation: none; }
     }
   </style>
 </head>
 <body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="particle-canvas"></canvas>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -962,67 +393,65 @@
         <a href="#certifications" data-i18n="nav-certs">ใบเซอร์</a>
         <a href="#contact" data-i18n="nav-contact">ติดต่อ</a>
       </div>
-      <div class="lang-switch" role="group" aria-label="Language / ภาษา">
-        <button type="button" class="lang-btn active" data-lang="th">TH</button>
-        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+        <div class="lang-switch" role="group" aria-label="Language / ภาษา">
+          <button type="button" class="lang-btn active" data-lang="th">TH</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="wrap">
-      <div class="hero-inner">
-
+      <div class="hero-inner fade-up">
         <div class="hero-left">
           <p class="eyebrow">PORTFOLIO — IT STUDENT, BANGKOK UNIVERSITY</p>
           <h1 class="hero-name display" data-i18n="hero-name">โกศัลย์ พงษ์ธนู</h1>
           <p class="hero-sub" data-i18n="hero-sub">นักศึกษาเทคโนโลยีสารสนเทศที่สร้างระบบขึ้นจากปัญหาจริง ตั้งแต่ร้านอาหารของตัวเอง ไปจนถึงอุปกรณ์วัดแสงหน้าจอ ผสมงานออกแบบ โค้ด และความคิดเชิงธุรกิจไว้ในตัวเดียว</p>
-
           <div style="margin-bottom: 40px; display: flex; gap: 12px; flex-wrap: wrap;">
             <a class="btn primary" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
             <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
           </div>
-
           <div class="readout">
             <div class="readout-cell">
               <p class="readout-label">LINE Friends</p>
-              <p class="readout-value">300<span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
+              <p class="readout-value"><span class="counter" data-target="300">0</span><span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
               <span class="readout-dot"></span>
             </div>
             <div class="readout-cell">
               <p class="readout-label" data-i18n="readout-gpax-label">GPAX สะสม</p>
-              <p class="readout-value mono">3.89</p>
+              <p class="readout-value mono"><span class="counter" data-target="3.50" data-decimal="true">0.00</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label">Enterprise UX</p>
-              <p class="readout-value">113<span class="unit" data-i18n="readout-screens-unit">หน้าจอ</span></p>
+              <p class="readout-value"><span class="counter" data-target="113">0</span><span class="unit" data-i18n="readout-screens-unit">หน้าจอ</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label">IoT Prototype</p>
-              <p class="readout-value">฿1,262</p>
+              <p class="readout-value">฿<span class="counter" data-target="1262">0</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label" data-i18n="readout-projects-label">ผลงานทั้งหมด</p>
-              <p class="readout-value">9<span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
+              <p class="readout-value"><span class="counter" data-target="9">0</span><span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
             </div>
           </div>
-        </div><!-- /hero-left -->
-
-        <div class="hero-photo">
+        </div>
+        <div class="hero-photo scale-in">
           <img src="https://i.imgur.com/3Z38He8.png" alt="โกศัลย์ พงษ์ธนู" data-i18n-alt="hero-photo-alt">
         </div>
-
-      </div><!-- /hero-inner -->
+      </div>
     </div>
   </header>
 
   <section class="section" id="about">
     <div class="wrap intro-grid">
-      <div class="intro-text">
+      <div class="intro-text fade-left">
         <p data-i18n="intro-p1">เริ่มจากการเปิดร้านหม่าล่าทอดเล็กๆ ชื่อ <strong>เสม &amp; Friends</strong> แล้วพบว่าไม่มีระบบไหนช่วยคำนวณกำไร ขาดทุนได้ตรงกับการขายแบบที่ร้านทำจริง ผมเลยสร้างมันขึ้นมาเอง เว็บแอปที่เชื่อมต่อ Google Sheets เป็นฐานข้อมูล ใช้บันทึกยอดขายและต้นทุนวัตถุดิบทุกวัน</p>
         <p data-i18n="intro-p2">จุดนั้นกลายเป็นจุดเริ่มต้นที่ทำให้รู้ว่าตัวเองชอบงานที่ได้ <strong>ออกแบบ เขียนโค้ด และคิดเป็นธุรกิจไปพร้อมกัน</strong> ไม่ใช่แค่ทำตามโจทย์ แต่ลงมือแก้ปัญหาที่เจอจริงด้วยเครื่องมือที่เหมาะกับมัน</p>
       </div>
-      <div class="intro-card">
+      <div class="intro-card fade-right">
         <h4>Currently</h4>
         <ul>
           <li><span data-i18n="cur-edu-k">การศึกษา</span><span data-i18n="cur-edu-v">เทคโนโลยีสารสนเทศ, ม.กรุงเทพ</span></li>
@@ -1037,19 +466,19 @@
 
   <section class="section" id="work">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <p class="eyebrow">SELECTED WORK</p>
         <h2 class="section-title" data-i18n="work-title">ผลงาน</h2>
         <p class="section-lede" data-i18n="work-lede">ทุกชิ้นด้านล่างคือของจริง ไม่ใช่โจทย์สมมุติ มีทั้งที่สร้างใช้เองและทำร่วมกับทีม</p>
       </div>
 
       <div class="work-grid">
-
-        <article class="work-card featured">
+        <article class="work-card featured fade-up">
           <div class="work-media-row">
             <div class="work-media">
               <span class="work-id">PRJ-01</span>
               <img loading="lazy" src="https://i.imgur.com/nl8zdcq.png" alt="หน้าจอระบบ POS และจัดการต้นทุน-กำไร ร้านเสม & Friends" data-i18n-alt="prj01-alt">
+              <div class="work-media-overlay"><span class="work-media-overlay-text">Click to view project →</span></div>
             </div>
             <div class="work-body">
               <div class="work-tags">
@@ -1059,19 +488,20 @@
               </div>
               <h3 class="work-title" data-i18n="prj01-title">ระบบ POS และจัดการต้นทุน-กำไร</h3>
               <p class="work-desc" data-i18n="prj01-desc">พัฒนาเว็บแอปสำหรับร้านเสม &amp; Friends (หม่าล่าทอด) ตั้งแต่หน้าบันทึกการขาย ไปจนถึงระบบบันทึกต้นทุนวัตถุดิบ เชื่อมต่อ Google Apps Script และ Google Sheets เป็นฐานข้อมูล พร้อมแดชบอร์ดแสดงยอดขาย กำไรสุทธิ และอันดับเมนูขายดีที่อัปเดตอัตโนมัติ ใช้งานจริงกับร้านทุกวัน</p>
-              <span class="work-link live-badge" style="color:var(--ok);font-weight:600;display:inline-flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;"></span><span class="live-text-th">ใช้งานจริงอยู่ในปัจจุบัน</span><span class="live-text-en" style="display:none;">Live in production</span></span>
+              <span class="live-badge"><span class="pulse-dot"></span><span class="live-text-th">ใช้งานจริงอยู่ในปัจจุบัน</span><span class="live-text-en" style="display:none;">Live in production</span></span>
               <p class="work-link">
-                <a class="demo-btn" href="./pos-system/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
+                <a class="demo-btn" href="./pos-system/index.html" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
                 <a class="demo-btn btn-line" style="margin-left: 8px;" href="https://lin.ee/qR4BuxM" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>LINE OA</a>
               </p>
             </div>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-1">
           <div class="work-media">
             <span class="work-id">PRJ-02</span>
             <img loading="lazy" src="https://i.imgur.com/wT90DYs.png" alt="กลยุทธ์การตลาดดิจิทัล ขนมไทยเกาะเกร็ด" data-i18n-alt="prj04-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">View Project →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1080,14 +510,15 @@
             </div>
             <h3 class="work-title" data-i18n="prj04-title">กลยุทธ์การตลาดดิจิทัล: ขนมไทยเกาะเกร็ด</h3>
             <p class="work-desc" data-i18n="prj04-desc">วิเคราะห์ Customer Persona และ Customer Journey ออกแบบกลยุทธ์ Omnichannel Marketing ครบ Funnel (TikTok, Instagram, Facebook, Shopee, LINE OA) พร้อมวางแผนแคมเปญและตัวชี้วัด KPI</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1Us5Ym0IZf2rqKIuL6ME-67Fq8FqLiTlZ/view?usp=share_link" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1Us5Ym0IZf2rqKIuL6ME-67Fq8FqLiTlZ/view?usp=share_link" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-2">
           <div class="work-media">
             <span class="work-id">PRJ-03</span>
             <img loading="lazy" src="https://i.imgur.com/bV2LlsD.png" alt="ระบบบริหารจัดการคลังวัสดุและครุภัณฑ์" data-i18n-alt="prj02-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">In Development</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1099,13 +530,15 @@
             </div>
             <h3 class="work-title" data-i18n="prj02-title">ระบบบริหารจัดการคลังวัสดุและครุภัณฑ์</h3>
             <p class="work-desc" data-i18n="prj02-desc">ออกแบบ UX/UI และ Prototype ระบบระดับองค์กรกว่า 113 หน้าจอ ครอบคลุมการเบิก-รับ-โอน-จำหน่ายทรัพย์สินและระบบรายงาน พร้อมวาง Design System ที่เป็นมาตรฐาน พัฒนาในรูปแบบ Web Application สำหรับคลังส่วนกลางและภูมิภาค ด้วยเทคโนโลยี PHP, Laravel, CSS, JavaScript และ Oracle Database</p>
-            <span style="color:var(--warn);font-weight:600;display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;"><span style="width:8px;height:8px;border-radius:50%;background:var(--warn);display:inline-block;animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;"></span><span class="wip-text-th">อยู่ระหว่างการพัฒนา</span><span class="wip-text-en" style="display:none;">In development</span></span>
+            <span class="wip-badge"><span class="pulse-dot"></span><span class="wip-text-th">อยู่ระหว่างการพัฒนา</span><span class="wip-text-en" style="display:none;">In development</span></span>
           </div>
         </article>
-        <article class="work-card">
+
+        <article class="work-card fade-up stagger-3">
           <div class="work-media">
             <span class="work-id">PRJ-04</span>
             <img loading="lazy" src="https://i.imgur.com/DW6DPbe.png" alt="ระบบการจัดการคลังยาและการขายสินค้า" data-i18n-alt="prj03-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">View Project →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1116,14 +549,15 @@
             </div>
             <h3 class="work-title" data-i18n="prj03-title">ระบบการจัดการคลังยาและการขายสินค้า</h3>
             <p class="work-desc" data-i18n="prj03-desc">วิเคราะห์ ออกแบบ และพัฒนาระบบจัดการคลังยาแบบครบวงจร ครอบคลุมตั้งแต่การจัดการสต็อกสินค้า ทะเบียนลูกค้า บันทึกการขาย การจัดส่ง ไปจนถึงการออกรายงานสรุปยอดขายสำหรับผู้บริหาร พัฒนาด้วยเทคโนโลยี PHP, MySQL, HTML, CSS, Bootstrap, JavaScript, AJAX และ JSON</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1aiqVZcouQzS3-REt94mSPIo7pJ-Vkpob/view?usp=sharing" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1aiqVZcouQzS3-REt94mSPIo7pJ-Vkpob/view?usp=sharing" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-1">
           <div class="work-media">
             <span class="work-id">PRJ-05</span>
             <img loading="lazy" src="https://i.imgur.com/awVTbzY.png" alt="หน้าจอเว็บแดชบอร์ด Blue Light Detector" data-i18n-alt="prj05-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">View Project →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1132,14 +566,15 @@
             </div>
             <h3 class="work-title">Blue Light Detector</h3>
             <p class="work-desc" data-i18n="prj05-desc">พัฒนาโปรแกรมควบคุม ESP32-S3 อ่านค่าจากเซนเซอร์วัดระยะห่าง (VL53L0X) และความสว่าง (TSL2591) แสดงผลผ่านจอ OLED และเว็บแดชบอร์ดแบบเรียลไทม์ พร้อมจัดทำแผนธุรกิจเสนอขอทุนสนับสนุน</p>
-            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1R4iKf8BSUwJVgZql4eVHG2k-B8VTEgNj/view?usp=share_link" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+            <p class="work-link"><a class="demo-btn" href="https://drive.google.com/file/d/1R4iKf8BSUwJVgZql4eVHG2k-B8VTEgNj/view?usp=share_link" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-2">
           <div class="work-media">
             <span class="work-id">PRJ-06</span>
             <img loading="lazy" src="https://i.imgur.com/pizFHqh.png" alt="ภาพร่าง wireframe แอป Food for Everyone" data-i18n-alt="prj06-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">View on Figma →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1148,14 +583,15 @@
             </div>
             <h3 class="work-title">Food for Everyone</h3>
             <p class="work-desc" data-i18n="prj06-desc">ออกแบบ flow แอปสั่งอาหารแบบครบวงจร ตั้งแต่ onboarding, login, เลือกสินค้า, ตะกร้า ไปจนถึงระบบติดตามออเดอร์และโปรไฟล์ผู้ใช้</p>
-            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/xwuPYIFrSwVDrt4cBYSVok/projectcs100?node-id=0-1&t=JFXxs5YRxcnCp8G8-1" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/xwuPYIFrSwVDrt4cBYSVok/projectcs100?node-id=0-1&t=JFXxs5YRxcnCp8G8-1" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-3">
           <div class="work-media">
             <span class="work-id">PRJ-07</span>
             <img loading="lazy" src="https://i.imgur.com/maQOCI3.jpeg" alt="หน้าจอเว็บไซต์สั่งอาหาร TUNGTUNGTUNGFOOD" data-i18n-alt="prj07-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">Live Demo →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1165,17 +601,17 @@
             <h3 class="work-title">TUNGTUNGTUNGFOOD</h3>
             <p class="work-desc" data-i18n="prj07-desc">พัฒนาเว็บไซต์สั่งอาหารตั้งแต่หน้าเมนู ตะกร้าสินค้า ไปจนถึงระบบ Checkout ที่คำนวณราคาและยืนยันคำสั่งซื้อได้จริง ด้วย HTML, CSS, JavaScript และ Bootstrap</p>
             <p class="work-link">
-              <a class="demo-btn" href="./web-food/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
-              <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/web-food1.git" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+              <a class="demo-btn" href="./web-food/index.html" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
+              <a class="demo-btn btn-ghost" style="margin-left: 8px;" href="https://github.com/pooh23z/web-food1.git" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
             </p>
           </div>
         </article>
 
-
-        <article class="work-card">
+        <article class="work-card fade-up stagger-1">
           <div class="work-media">
             <span class="work-id">PRJ-08</span>
             <img loading="lazy" src="./galaxy-store.png" alt="หน้าจอเว็บแอป GALAXY Store" data-i18n-alt="prj09-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">Live Demo →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1185,16 +621,17 @@
             <h3 class="work-title">GALAXY Store</h3>
             <p class="work-desc" data-i18n="prj09-desc">ออกแบบและพัฒนาเว็บไซต์ GALAXY Store สำหรับเปรียบเทียบอุปกรณ์อิเล็กทรอนิกส์และเครื่องใช้ไฟฟ้า ดีไซน์ระดับ Premium พร้อมระบบ Interactive UI ด้วย JavaScript</p>
             <p class="work-link">
-              <a class="demo-btn" href="./galaxy-s26-compare/index.html" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
-              <a class="demo-btn" style="background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: 8px;" href="https://github.com/pooh23z/galaxy-s26-compare" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+              <a class="demo-btn" href="./galaxy-s26-compare/index.html" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a>
+              <a class="demo-btn btn-ghost" style="margin-left: 8px;" href="https://github.com/pooh23z/galaxy-s26-compare" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
             </p>
           </div>
         </article>
 
-        <article class="work-card">
+        <article class="work-card fade-up stagger-2">
           <div class="work-media">
             <span class="work-id">PRJ-09</span>
             <img loading="lazy" src="./figma-cat.png" alt="ภาพร่างและดีไซน์ Daily UI Challenge" data-i18n-alt="prj10-alt">
+            <div class="work-media-overlay"><span class="work-media-overlay-text">View on Figma →</span></div>
           </div>
           <div class="work-body">
             <div class="work-tags">
@@ -1203,22 +640,21 @@
             </div>
             <h3 class="work-title">Daily UI Challenge</h3>
             <p class="work-desc" data-i18n="prj10-desc">ผลงานการออกแบบ UI รูปแบบต่างๆ เพื่อฝึกฝนทักษะด้าน UX/UI และการจัดวาง Layout ที่ทันสมัย ผ่านโจทย์รายวันใน Figma</p>
-            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/pgtVCKfQ1MaVd4QzS9G3fA/Daily-UI?node-id=0-1&t=gaJ4nEEjU3fEUWPs-1" target="_blank" rel="noopener" ><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
+            <p class="work-link"><a class="demo-btn" href="https://www.figma.com/design/pgtVCKfQ1MaVd4QzS9G3fA/Daily-UI?node-id=0-1&t=gaJ4nEEjU3fEUWPs-1" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 6px; vertical-align: text-bottom;"><path d="M5.33 8a2.67 2.67 0 1 1 0-5.33h2.67V8H5.33zm5.34-5.33a2.67 2.67 0 1 1-2.67 2.66V2.67h2.67zm0 5.33a2.67 2.67 0 1 1-2.67 2.67V8h2.67zM8 10.67v2.66a2.67 2.67 0 1 1-2.67-2.66h2.67zm-2.67 2.66a2.67 2.67 0 1 1 0-5.33h2.67v5.33H5.33z" fill="currentColor"/></svg><span data-i18n="demo-link">เปิดดูผลงาน</span></a></p>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
   <section class="section" id="skills">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <p class="eyebrow">TOOLKIT</p>
         <h2 class="section-title" data-i18n="skills-title">ทักษะ</h2>
       </div>
       <div class="skills-grid">
-        <div class="skill-group">
+        <div class="skill-group fade-up stagger-1">
           <h4>Design & Media</h4>
           <div class="skill-chips">
             <span class="chip">Figma</span>
@@ -1230,8 +666,18 @@
             <span class="chip">UX/UI Principles</span>
             <span class="chip">Wireframing</span>
           </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>Figma</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>Adobe Suite</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group fade-up stagger-2">
           <h4>Web Development</h4>
           <div class="skill-chips">
             <span class="chip">HTML5</span>
@@ -1239,8 +685,18 @@
             <span class="chip">JavaScript</span>
             <span class="chip">Bootstrap</span>
           </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>HTML/CSS</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>JavaScript</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group fade-up stagger-3">
           <h4>Backend / Data</h4>
           <div class="skill-chips">
             <span class="chip">Google Apps Script</span>
@@ -1251,20 +707,36 @@
             <span class="chip">UML / DFD</span>
             <span class="chip">Oracle Database</span>
           </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>PHP / Laravel</span><span>65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>Database</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+          </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group fade-up stagger-1">
           <h4>Hardware / IoT</h4>
           <div class="skill-chips">
             <span class="chip">C++ (Arduino/ESP32)</span>
             <span class="chip">I2C Sensors</span>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group fade-up stagger-2">
           <h4>Business / Marketing</h4>
           <div class="skill-chips">
             <span class="chip">Digital Marketing Strategy</span>
             <span class="chip">LINE OA Management</span>
             <span class="chip">Customer Research</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header"><span>Digital Marketing</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1273,37 +745,51 @@
 
   <section class="section" id="background">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <p class="eyebrow">BACKGROUND</p>
         <h2 class="section-title" data-i18n="bg-title">ประสบการณ์และการศึกษา</h2>
       </div>
       <div class="bg-grid">
-        <div class="bg-col">
+        <div class="bg-col fade-left">
           <h4 data-i18n="bg-work-h">ประสบการณ์ทำงาน</h4>
-          <div class="bg-item">
-            <p class="bg-role" data-i18n="bg-role-1">เจ้าของร้าน &amp; ผู้ดูแลการตลาดออนไลน์</p>
-            <p class="bg-org" data-i18n="bg-org-1">ร้านเสม &amp; Friends (หม่าล่าทอด)</p>
-            <p class="bg-meta" data-i18n="bg-meta-1">ปัจจุบัน</p>
-          </div>
-          <div class="bg-item">
-            <p class="bg-role" data-i18n="bg-role-2">พนักงานจัดออเดอร์ O2O (Part-time)</p>
-            <p class="bg-org">Makro (CP Axtra)</p>
-          </div>
-          <div class="bg-item">
-            <p class="bg-role" data-i18n="bg-role-3">พนักงานคีย์ข้อมูล (Part-time)</p>
-            <p class="bg-org">Thailand International Motor Expo</p>
+          <div class="timeline">
+            <div class="timeline-item active">
+              <div class="bg-item">
+                <p class="bg-role" data-i18n="bg-role-1">เจ้าของร้าน &amp; ผู้ดูแลการตลาดออนไลน์</p>
+                <p class="bg-org" data-i18n="bg-org-1">ร้านเสม &amp; Friends (หม่าล่าทอด)</p>
+                <p class="bg-meta" data-i18n="bg-meta-1">ปัจจุบัน</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="bg-item">
+                <p class="bg-role" data-i18n="bg-role-2">พนักงานจัดออเดอร์ O2O (Part-time)</p>
+                <p class="bg-org">Makro (CP Axtra)</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="bg-item">
+                <p class="bg-role" data-i18n="bg-role-3">พนักงานคีย์ข้อมูล (Part-time)</p>
+                <p class="bg-org">Thailand International Motor Expo</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="bg-col">
+        <div class="bg-col fade-right">
           <h4 data-i18n="bg-edu-h">การศึกษา</h4>
-          <div class="bg-item">
-            <p class="bg-role" data-i18n="bg-role-4">วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศ</p>
-            <p class="bg-org" data-i18n="bg-org-4">มหาวิทยาลัยกรุงเทพ คณะเทคโนโลยีสารสนเทศและนวัตกรรม</p>
-            <p class="bg-meta" data-i18n="bg-meta-4">GPAX 3.50 · คาดว่าจะจบ พฤษภาคม 2570</p>
-          </div>
-          <div class="bg-item">
-            <p class="bg-role" data-i18n="bg-role-5">มัธยมศึกษา สาขาศิลป์-คำนวณ</p>
-            <p class="bg-org" data-i18n="bg-org-5">โรงเรียนสวนกุหลาบวิทยาลัยชลบุรี</p>
+          <div class="timeline">
+            <div class="timeline-item active">
+              <div class="bg-item">
+                <p class="bg-role" data-i18n="bg-role-4">วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศ</p>
+                <p class="bg-org" data-i18n="bg-org-4">มหาวิทยาลัยกรุงเทพ คณะเทคโนโลยีสารสนเทศและนวัตกรรม</p>
+                <p class="bg-meta" data-i18n="bg-meta-4">GPAX 3.50 · คาดว่าจะจบ พฤษภาคม 2570</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="bg-item">
+                <p class="bg-role" data-i18n="bg-role-5">มัธยมศึกษา สาขาศิลป์-คำนวณ</p>
+                <p class="bg-org" data-i18n="bg-org-5">โรงเรียนสวนกุหลาบวิทยาลัยชลบุรี</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1312,54 +798,178 @@
 
   <section class="section" id="certifications" style="background: var(--surface);">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head fade-up">
         <p class="eyebrow">AWARDS & CERTS</p>
         <h2 class="section-title" data-i18n="bg-cert-h">ใบรับรองและการฝึกอบรม</h2>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-        
-        <div style="background: var(--paper); padding: 32px; border-radius: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s ease;">
+      <div class="cert-grid">
+        <div class="cert-card fade-up stagger-1">
           <div style="flex: 1;">
             <p class="bg-role" data-i18n="bg-cert-role-1" style="font-size: 18px; margin-bottom: 8px;">ด้านความมั่นคงปลอดภัยไซเบอร์ ระดับพื้นฐาน (Cybersecurity Foundation Course)</p>
             <p class="bg-org" data-i18n="bg-cert-org-1">สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (NCSA)</p>
             <p class="bg-meta" style="margin-bottom: 24px;" data-i18n="bg-cert-meta-1">มีนาคม 2569 · 21 ชั่วโมง (รหัสยืนยัน: 7554921935KP)</p>
           </div>
-          <img loading="lazy" src="./ncsa-cert.png" alt="Cybersecurity Foundation Course Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); object-fit: contain; margin-top: auto;">
+          <img loading="lazy" src="./ncsa-cert.png" alt="Cybersecurity Foundation Course Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: var(--shadow-sm); object-fit: contain; margin-top: auto;">
         </div>
-
-        <div style="background: var(--paper); padding: 32px; border-radius: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s ease;">
+        <div class="cert-card fade-up stagger-2">
           <div style="flex: 1;">
             <p class="bg-role" data-i18n="bg-cert-role-2" style="font-size: 18px; margin-bottom: 8px;">Claude 101 (Certificate of Completion)</p>
             <p class="bg-org" data-i18n="bg-cert-org-2">Anthropic</p>
             <p class="bg-meta" style="margin-bottom: 24px;" data-i18n="bg-cert-meta-2">2569</p>
           </div>
-          <img loading="lazy" src="./claude-cert.png" alt="Claude 101 Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.06); object-fit: contain; background: #E6E1DC; margin-top: auto;">
+          <img loading="lazy" src="./claude-cert.png" alt="Claude 101 Certificate" style="border-radius: 12px; border: 1px solid var(--line); width: 100%; height: auto; box-shadow: var(--shadow-sm); object-fit: contain; background: #E6E1DC; margin-top: auto;">
         </div>
-
       </div>
     </div>
   </section>
 
   <footer class="contact section" id="contact">
     <div class="wrap">
-      <h2 class="contact-title" data-i18n="contact-title">พร้อมเรียนรู้และลงมือทำ</h2>
-      <p class="contact-sub" data-i18n="contact-sub">สนใจฝึกงานตำแหน่ง Junior UX/UI Designer & Marketing หากองค์กรไหนสนใจ ยินดีส่งผลงานและพูดคุยเพิ่มเติมได้เลยครับ</p>
-      <div class="contact-row">
-        <a class="btn primary" href="mailto:kosalyphonsthnu@gmail.com" data-i18n="contact-email-btn">ส่งอีเมลถึงผม</a>
-        <a class="btn" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
-        <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
-        <a class="btn" href="tel:+66641174443">064-117-4443</a>
-        <a class="btn" href="https://github.com/pooh23z" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/kosan-phongthanu" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="contact-title fade-up" data-i18n="contact-title">พร้อมเรียนรู้และลงมือทำ</h2>
+          <p class="contact-sub fade-up stagger-1" data-i18n="contact-sub">สนใจฝึกงานตำแหน่ง Junior UX/UI Designer & Marketing หากองค์กรไหนสนใจ ยินดีส่งผลงานและพูดคุยเพิ่มเติมได้เลยครับ</p>
+          <div class="contact-row fade-up stagger-2">
+            <a class="btn primary" href="mailto:kosalyphonsthnu@gmail.com" data-i18n="contact-email-btn">ส่งอีเมลถึงผม</a>
+            <a class="btn" href="resume-th.html" target="_blank" data-i18n="btn-resume-th">📄 ดูเรซูเม่ (ภาษาไทย)</a>
+            <a class="btn" href="resume.html" target="_blank" data-i18n="btn-resume-en">📄 View Resume (English)</a>
+            <a class="btn" href="tel:+66641174443">064-117-4443</a>
+            <a class="btn" href="https://github.com/pooh23z" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/kosan-phongthanu" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="contact-form-card fade-up stagger-2">
+          <h3 style="margin: 0 0 16px; font-size: 20px; font-weight: 600; color: var(--ink);" data-i18n="form-heading">ส่งข้อความถึงผม (Send Message)</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName" data-i18n="form-label-name">ชื่อของคุณ (Name)</label>
+              <input class="form-input" type="text" id="contactName" name="name" placeholder="กรอกชื่อของคุณ..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail" data-i18n="form-label-email">อีเมลติดต่อกลับ (Email)</label>
+              <input class="form-input" type="email" id="contactEmail" name="email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactMessage" data-i18n="form-label-msg">ข้อความ (Message)</label>
+              <textarea class="form-input" id="contactMessage" name="message" rows="4" placeholder="พิมพ์ข้อความที่นี่..." required></textarea>
+            </div>
+            <button type="submit" class="btn primary" style="width: 100%; justify-content: center;" id="contactSubmit" data-i18n="form-submit-btn">ส่งข้อความ (Send Message) →</button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
       </div>
+
       <div class="foot-bottom">
         <span data-i18n="foot-signature">โกศัลย์ พงษ์ธนู — กรุงเทพ, ประเทศไทย</span>
         <span>kosalyphonsthnu@gmail.com</span>
       </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
   <script>
     (function () {
+      // Scroll Progress Bar
+      var scrollProgress = document.getElementById('scrollProgress');
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+      });
+
+
+      // Particle Canvas
+      var canvas = document.getElementById('particle-canvas');
+      var ctx = canvas.getContext('2d');
+      var particles = [];
+      var particleCount = 25;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function createParticle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 1,
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.5 + 0.1
+        };
+      }
+
+      for (var i = 0; i < particleCount; i++) {
+        particles.push(createParticle());
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var signalColor = getComputedStyle(document.body).getPropertyValue('--signal').trim();
+
+        particles.forEach(function(p) {
+          p.x += p.speedX;
+          p.y += p.speedY;
+
+          if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = signalColor || '#121212';
+          ctx.globalAlpha = p.opacity;
+          ctx.fill();
+        });
+
+        // Draw connections
+        for (var i = 0; i < particles.length; i++) {
+          for (var j = i + 1; j < particles.length; j++) {
+            var dx = particles[i].x - particles[j].x;
+            var dy = particles[i].y - particles[j].y;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = signalColor || '#121212';
+              ctx.globalAlpha = 0.1 * (1 - distance / 150);
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+
+      // Theme Toggle
+      var themeToggle = document.getElementById('themeToggle');
+      var themeIcon = document.getElementById('themeIcon');
+      var currentTheme = localStorage.getItem('theme') || 'light';
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+      }
+
+      setTheme(currentTheme);
+
+      themeToggle.addEventListener('click', function() {
+        var newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+      });
+
+      // i18n
       var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
       var original = new Map();
       i18nEls.forEach(function (el) { original.set(el, el.innerHTML); });
@@ -1414,7 +1024,6 @@
         'prj06-alt': 'Food for Everyone app wireframe',
         'prj07-desc': 'Built a food-ordering website from the menu page and cart through to a working checkout that calculates totals and confirms orders, using HTML, CSS, JavaScript, and Bootstrap.',
         'prj07-alt': 'TUNGTUNGTUNGFOOD food-ordering website screen',
-
         'prj09-desc': 'Designed and developed the GALAXY Store website for comparing electronics and appliances. Features a premium design with interactive UI using JavaScript.',
         'prj09-alt': 'GALAXY Store web app screen',
         'prj10-desc': 'A collection of UI designs to practice UX/UI skills and modern layout composition through daily Figma challenges.',
@@ -1446,6 +1055,11 @@
         'contact-email-btn': 'Email me',
         'btn-resume-th': '📄 View Resume (Thai)',
         'btn-resume-en': '📄 View Resume (English)',
+        'form-heading': 'Send Message',
+        'form-label-name': 'Your Name',
+        'form-label-email': 'Your Email',
+        'form-label-msg': 'Message',
+        'form-submit-btn': 'Send Message →',
         'foot-signature': 'Kosan Phongthanu — Bangkok, Thailand'
       };
 
@@ -1458,7 +1072,6 @@
         'prj05-alt': translations['prj05-alt'],
         'prj06-alt': translations['prj06-alt'],
         'prj07-alt': translations['prj07-alt'],
-
         'prj09-alt': translations['prj09-alt'],
         'prj10-alt': translations['prj10-alt']
       };
@@ -1496,32 +1109,90 @@
         b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
       });
 
-      // Scroll Animation (Fade up)
+      // Counter Animation
+      function animateCounters() {
+        var counters = document.querySelectorAll('.counter');
+        counters.forEach(function(counter) {
+          var target = parseFloat(counter.getAttribute('data-target'));
+          var isDecimal = counter.getAttribute('data-decimal') === 'true';
+          var duration = 2000;
+          var start = 0;
+          var startTime = null;
+
+          function updateCounter(currentTime) {
+            if (!startTime) startTime = currentTime;
+            var progress = (currentTime - startTime) / duration;
+
+            if (progress < 1) {
+              var easeOut = 1 - Math.pow(1 - progress, 3);
+              var current = start + (target - start) * easeOut;
+              counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = isDecimal ? target.toFixed(2) : target;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        });
+      }
+
+      // Skill Bar Animation
+      function animateSkillBars() {
+        var skillBars = document.querySelectorAll('.skill-bar-fill');
+        skillBars.forEach(function(bar) {
+          var width = bar.getAttribute('data-width');
+          bar.style.width = width + '%';
+        });
+      }
+
+      // Scroll Animation Observer
       var observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
       };
+
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+
+            // Trigger counter animation when hero is visible
+            if (entry.target.classList.contains('hero-inner')) {
+              animateCounters();
+            }
+
+            // Trigger skill bars when skills section is visible
+            if (entry.target.closest('#skills')) {
+              animateSkillBars();
+            }
+
             observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
-      var sections = document.querySelectorAll('.section, .hero-inner');
-      sections.forEach(function(sec) {
-        sec.classList.add('fade-up');
-        observer.observe(sec);
+      var animatableElements = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in, .hero-inner');
+      animatableElements.forEach(function(el) {
+        observer.observe(el);
       });
 
+      // Also observe skills section for skill bars
+      var skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        var skillsObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateSkillBars();
+              skillsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        skillsObserver.observe(skillsSection);
+      }
+
       // Back to Top Button
-      var backToTopBtn = document.createElement('button');
-      backToTopBtn.innerHTML = '↑';
-      backToTopBtn.className = 'back-to-top';
-      backToTopBtn.setAttribute('aria-label', 'Back to top');
-      document.body.appendChild(backToTopBtn);
+      var backToTopBtn = document.getElementById('backToTop');
 
       window.addEventListener('scroll', function() {
         if (window.scrollY > 500) {
@@ -1534,6 +1205,66 @@
       backToTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Contact Form Handler
+      var contactForm = document.getElementById('contactForm');
+      var formStatus = document.getElementById('formStatus');
+      var contactSubmit = document.getElementById('contactSubmit');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var name = document.getElementById('contactName').value;
+          var email = document.getElementById('contactEmail').value;
+          var message = document.getElementById('contactMessage').value;
+
+          contactSubmit.disabled = true;
+          var origText = contactSubmit.innerHTML;
+          contactSubmit.innerHTML = 'กำลังส่งข้อความ...';
+          formStatus.className = 'form-status';
+          formStatus.style.display = 'none';
+
+          fetch('https://formsubmit.co/ajax/kosalyphonsthnu@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              message: message,
+              _subject: 'ข้อความใหม่จาก Portfolio (' + name + ')'
+            })
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            contactSubmit.disabled = false;
+            contactSubmit.innerHTML = origText;
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '✅ ส่งข้อความเรียบร้อยแล้ว! ขอบคุณที่สนใจและติดต่อมาครับ';
+            contactForm.reset();
+          })
+          .catch(function(err) {
+            contactSubmit.disabled = false;
+            contactSubmit.innerHTML = origText;
+            window.location.href = 'mailto:kosalyphonsthnu@gmail.com?subject=' + encodeURIComponent('ข้อความจาก Portfolio (' + name + ')') + '&body=' + encodeURIComponent('ชื่อ: ' + name + '\nอีเมล: ' + email + '\n\nข้อความ:\n' + message);
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '📬 กำลังเปิดโปรแกรมส่งอีเมลเพื่อส่งข้อความ...';
+          });
+        });
+      }
 
     })();
   </script>
