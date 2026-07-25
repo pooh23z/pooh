@@ -408,24 +408,24 @@
           <div class="readout">
             <div class="readout-cell">
               <p class="readout-label">LINE Friends</p>
-              <p class="readout-value"><span class="counter" data-target="300">0</span><span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
+              <p class="readout-value"><span class="counter" data-target="300">300</span><span class="unit" data-i18n="readout-line-unit">+ ราย</span></p>
               <span class="readout-dot"></span>
             </div>
             <div class="readout-cell">
               <p class="readout-label" data-i18n="readout-gpax-label">GPAX สะสม</p>
-              <p class="readout-value mono"><span class="counter" data-target="3.50" data-decimal="true">0.00</span></p>
+              <p class="readout-value mono"><span class="counter" data-target="3.50" data-decimal="true">3.50</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label">Enterprise UX</p>
-              <p class="readout-value"><span class="counter" data-target="113">0</span><span class="unit" data-i18n="readout-screens-unit">หน้าจอ</span></p>
+              <p class="readout-value"><span class="counter" data-target="113">113</span><span class="unit" data-i18n="readout-screens-unit">หน้าจอ</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label">IoT Prototype</p>
-              <p class="readout-value">฿<span class="counter" data-target="1262">0</span></p>
+              <p class="readout-value">฿<span class="counter" data-target="1262">1,262</span></p>
             </div>
             <div class="readout-cell">
               <p class="readout-label" data-i18n="readout-projects-label">ผลงานทั้งหมด</p>
-              <p class="readout-value"><span class="counter" data-target="9">0</span><span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
+              <p class="readout-value"><span class="counter" data-target="9">9</span><span class="unit" data-i18n="readout-projects-unit"> โปรเจกต์</span></p>
             </div>
           </div>
         </div>
@@ -1101,29 +1101,34 @@
       });
 
       // Counter Animation
+      function formatNum(num, isDecimal) {
+        if (isDecimal) return num.toFixed(2);
+        return Math.floor(num).toLocaleString('en-US');
+      }
+
       function animateCounters() {
         var counters = document.querySelectorAll('.counter');
         counters.forEach(function(counter) {
           var target = parseFloat(counter.getAttribute('data-target'));
           var isDecimal = counter.getAttribute('data-decimal') === 'true';
-          var duration = 2000;
+          var duration = 1200;
           var start = 0;
           var startTime = null;
 
           function updateCounter(currentTime) {
             if (!startTime) startTime = currentTime;
-            var progress = (currentTime - startTime) / duration;
-
+            var progress = Math.min((currentTime - startTime) / duration, 1);
+            var easeOut = 1 - Math.pow(1 - progress, 3);
+            var current = start + (target - start) * easeOut;
+            counter.textContent = formatNum(current, isDecimal);
             if (progress < 1) {
-              var easeOut = 1 - Math.pow(1 - progress, 3);
-              var current = start + (target - start) * easeOut;
-              counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
               requestAnimationFrame(updateCounter);
             } else {
-              counter.textContent = isDecimal ? target.toFixed(2) : target;
+              counter.textContent = formatNum(target, isDecimal);
             }
           }
 
+          counter.textContent = formatNum(target, isDecimal);
           requestAnimationFrame(updateCounter);
         });
       }
